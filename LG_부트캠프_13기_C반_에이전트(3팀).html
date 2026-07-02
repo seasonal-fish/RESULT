@@ -3,700 +3,936 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>평가 리포트 — LG 부트캠프 13기 C반 3팀</title>
+<title>LG 부트캠프 13기 C반 에이전트 평가 리포트 (3팀)</title>
 <style>
-:root{--primary:#1a3a5c;--ok:#1a7f37;--warn:#b45309;--fail:#b91c1c;--na:#6b7280;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Segoe UI','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
-header{background:var(--primary);color:#fff;padding:32px 48px;}
-header h1{font-size:22px;font-weight:800;margin-bottom:6px;}
-header .meta{font-size:13px;opacity:.8;}
-.container{max-width:1140px;margin:0 auto;padding:32px 24px;}
-.section{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:28px;overflow:hidden;}
-.sh{background:var(--primary);color:#fff;padding:13px 22px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px;}
-.sh .num{background:rgba(255,255,255,.2);border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
-.sb{padding:20px 24px;}
-table{width:100%;border-collapse:collapse;font-size:13px;}
-th{background:#f1f5f9;text-align:left;padding:8px 10px;font-weight:600;border-bottom:2px solid var(--border);color:var(--primary);white-space:nowrap;}
-td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
-tr:last-child td{border-bottom:none;}
-tr:hover td{background:#fafafa;}
-.b{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;white-space:nowrap;}
-.ok{background:#dcfce7;color:var(--ok);}
-.warn{background:#fef9c3;color:var(--warn);}
-.fail{background:#fee2e2;color:var(--fail);}
-.na{background:#f1f5f9;color:var(--na);}
-.new{background:#ede9fe;color:#5b21b6;}
-.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px;margin-bottom:20px;}
-.sc{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;}
-.sc .n{font-size:30px;font-weight:800;color:var(--primary);}
-.sc .l{font-size:11px;color:var(--muted);margin-top:3px;}
-.sc.g .n{color:var(--ok);}
-.sc.a .n{color:var(--warn);}
-.note{background:#f8fafc;border-left:3px solid var(--primary);padding:9px 13px;margin:10px 0;border-radius:0 5px 5px 0;font-size:13px;color:var(--muted);}
-.note.w{border-color:var(--warn);background:#fffbeb;color:#78350f;}
-.note.o{border-color:var(--ok);background:#f0fdf4;color:#14532d;}
-.note.i{border-color:#60a5fa;background:#eff6ff;color:#1e40af;}
-ev{display:block;font-size:11px;color:var(--muted);margin-top:3px;font-family:'Consolas',monospace;}
-code{font-family:'Consolas',monospace;background:#f1f5f9;padding:1px 5px;border-radius:3px;font-size:12px;}
-.ts{font-family:'Consolas',monospace;font-size:12px;font-weight:700;color:#0369a1;background:#e0f2fe;padding:1px 6px;border-radius:4px;}
-.gb{display:flex;gap:4px;align-items:center;margin:4px 0;}
-.gb .gl{width:150px;font-size:12px;color:var(--muted);flex-shrink:0;}
-.gb .gw{flex:1;background:#e2e8f0;border-radius:3px;height:14px;}
-.gb .gf{height:14px;border-radius:3px;}
-.gb .gc{font-size:12px;font-weight:700;margin-left:6px;min-width:24px;}
-.sb-box{margin-top:14px;padding:15px 18px;border-radius:8px;}
-.sb-box h3{font-size:14px;margin-bottom:8px;}
-.sb-box blockquote{font-size:12px;color:var(--muted);border-left:3px solid #94a3b8;padding-left:10px;margin-bottom:10px;}
-input.si{width:60px;border:1px solid var(--border);border-radius:4px;padding:4px;text-align:center;}
-textarea.st{width:100%;border:1px solid var(--border);border-radius:4px;padding:4px;font-size:12px;}
-details summary{cursor:pointer;font-weight:600;color:var(--primary);padding:4px 0;}
-details[open] summary{margin-bottom:8px;}
-footer{background:var(--primary);color:rgba(255,255,255,.65);text-align:center;padding:18px;font-size:12px;}
-.grp-hd{background:#f8fafc;font-weight:700;color:var(--primary);padding:8px 10px;}
+  :root {
+    --pass:#16a34a; --pass-bg:#f0fdf4;
+    --fail:#dc2626; --fail-bg:#fef2f2;
+    --warn:#d97706; --warn-bg:#fffbeb;
+    --na:#6b7280;   --na-bg:#f9fafb;
+    --part:#2563eb; --part-bg:#eff6ff;
+    --bd:#e5e7eb;
+    --hdr:#1e3a5f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Malgun Gothic',sans-serif;font-size:14px;color:#111827;background:#f1f5f9;line-height:1.65}
+  a{color:inherit}
+
+  /* ── 헤더 ── */
+  .page-header{background:var(--hdr);color:#fff;padding:28px 40px}
+  .page-header h1{font-size:20px;font-weight:700;margin-bottom:5px}
+  .page-header .meta{font-size:12.5px;opacity:.85;line-height:1.8}
+
+  /* ── 네비 ── */
+  .toc{background:#fff;border-bottom:1px solid var(--bd);padding:10px 40px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:6px 18px;position:sticky;top:0;z-index:10}
+  .toc a{color:var(--hdr);text-decoration:none;white-space:nowrap}
+  .toc a:hover{text-decoration:underline}
+
+  /* ── 컨테이너 ── */
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px}
+
+  /* ── 섹션 ── */
+  section{background:#fff;border:1px solid var(--bd);border-radius:10px;margin-bottom:24px;overflow:hidden;scroll-margin-top:50px}
+  .sec-hdr{background:var(--hdr);color:#fff;padding:12px 22px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px}
+  .sec-hdr .sub{font-size:12px;font-weight:400;opacity:.8}
+  .sec-body{padding:18px 22px}
+
+  /* ── 테이블 ── */
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{background:#f3f4f6;text-align:left;padding:7px 9px;border:1px solid var(--bd);font-weight:600;white-space:nowrap}
+  td{padding:6px 9px;border:1px solid var(--bd);vertical-align:top}
+  tr:nth-child(even) td{background:#f9fafb}
+
+  /* ── 배지 ── */
+  .b{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11.5px;font-weight:700;white-space:nowrap;letter-spacing:.02em}
+  .bP{background:var(--pass-bg);color:var(--pass)}
+  .bF{background:var(--fail-bg);color:var(--fail)}
+  .bW{background:var(--warn-bg);color:var(--warn)}
+  .bN{background:var(--na-bg);color:var(--na)}
+  .bM{background:var(--part-bg);color:var(--part)}
+
+  /* ── 근거 라벨 ── */
+  .ev{font-size:11.5px;color:#6b7280;margin-top:3px;line-height:1.5}
+  .ev code{font-size:11px;background:#f3f4f6;padding:1px 4px;border-radius:3px;color:#374151}
+
+  /* ── KPI 카드 ── */
+  .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:10px}
+  .kpi{border:1px solid var(--bd);border-radius:8px;padding:12px 14px;text-align:center}
+  .kpi-v{font-size:24px;font-weight:700}
+  .kpi-l{font-size:11.5px;color:#6b7280;margin-top:3px}
+
+  /* ── 알림 박스 ── */
+  .notice{background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:9px 13px;margin-bottom:12px;font-size:12.5px;color:#92400e}
+  .notice strong{color:#b45309}
+  .info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:9px 13px;margin-bottom:12px;font-size:12.5px;color:#1e40af}
+
+  /* ── 강사 평가 폼 ── */
+  .form-block{border:2px dashed #d1d5db;border-radius:8px;padding:14px;margin-bottom:14px}
+  .form-block h4{font-size:13px;font-weight:700;color:var(--hdr);margin-bottom:6px}
+  .fact-box{background:#f0f9ff;border-left:3px solid #38bdf8;padding:7px 11px;margin-bottom:8px;font-size:12px;color:#0369a1;line-height:1.6}
+  .form-block input[type=number]{width:48px;border:1px solid #d1d5db;border-radius:4px;padding:2px 5px;text-align:center;font-size:12px}
+  .form-block textarea{width:100%;border:1px solid #d1d5db;border-radius:4px;padding:3px 7px;resize:vertical;min-height:30px;font-size:12px}
+
+  /* ── 협업 카드 ── */
+  .collab-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .collab-card{border:1px solid var(--bd);border-radius:8px;padding:13px}
+  .collab-card h4{font-size:12.5px;font-weight:700;color:var(--hdr);margin-bottom:8px}
+  .collab-card table th{background:#f8fafc}
+
+  /* ── 한계 항목 ── */
+  .limit{background:#fffbeb;border-left:3px solid #eab308;border-radius:4px;padding:8px 12px;margin-bottom:8px;font-size:13px}
+  .limit strong{display:block;margin-bottom:2px;color:#713f12}
+
+  h3{font-size:13.5px;color:#374151;margin:14px 0 7px;font-weight:700}
+  footer{background:var(--hdr);color:#fff;text-align:center;padding:14px;font-size:11.5px;opacity:.9;margin-top:10px}
 </style>
 </head>
 <body>
 
-<header>
-  <h1>🔎 LG 부트캠프 13기 C반 3팀 — 자동 평가 리포트</h1>
+<!-- ══════════════ 헤더 ══════════════ -->
+<div class="page-header">
+  <h1>LG 부트캠프 13기 C반 — 자동 평가 리포트 (3팀)</h1>
   <div class="meta">
     프로젝트: <strong>요즘애드 (YozumAd)</strong> &nbsp;|&nbsp;
-    분석 일시: 2026-07-01 &nbsp;|&nbsp;
-    평가 규칙: project_assessment_agent_v1.0.md &nbsp;|&nbsp;
-    요구사항 기준: LG_부트캠프_13기_C반_요구사항_명세서(3팀).md (Confluence 2026-07-01 동기화)
+    평가 규칙: <strong>project_assessment_agent_v1.0.md</strong> &nbsp;|&nbsp;
+    생성 일시: <strong>2026-07-02</strong><br>
+    분석 경로: <code>D:\bootcamp\project_output\LG_부트캠프_13기_C반_최종결과물(3팀)\</code> &nbsp;|&nbsp;
+    소스: <code>결과파일/</code> (src · tests · test-results · git_log) &nbsp;|&nbsp;
+    요구사항 명세서: <code>LG_부트캠프_13기_C반_요구사항_명세서(3팀).md</code>
   </div>
-</header>
+</div>
 
-<div class="container">
+<!-- ══════════════ 네비 ══════════════ -->
+<nav class="toc">
+  <strong>목차:</strong>
+  <a href="#s1">① 요약</a>
+  <a href="#s2">② 산출물 점검</a>
+  <a href="#s3">③ 기능 구현 매트릭스</a>
+  <a href="#s4">④ 테스트 결과</a>
+  <a href="#s5">⑤ DevOps·실행 가능성</a>
+  <a href="#s6">⑥ 시연 확인표</a>
+  <a href="#s7">⑦ Git 협업 지표</a>
+  <a href="#s8">⑧ 비기능 강사 평가 폼</a>
+  <a href="#s9">⑨ 확인 불가·한계</a>
+</nav>
 
-<!-- ═══════════════════════════════════════════════
-     1. 요약
-════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="sh"><span class="num">1</span> 요약</div>
-  <div class="sb">
-    <div class="sg">
-      <div class="sc g"><div class="n">16/16</div><div class="l">기능 요구사항 구현</div></div>
-      <div class="sc g"><div class="n">260</div><div class="l">자동 테스트 PASS</div></div>
-      <div class="sc g"><div class="n">6/8</div><div class="l">DevOps 기준 확인</div></div>
-      <div class="sc a"><div class="n">2/8</div><div class="l">DevOps 확인 불가</div></div>
-      <div class="sc"><div class="n">3</div><div class="l">Git 저장소</div></div>
-      <div class="sc"><div class="n">4</div><div class="l">Git 기여자</div></div>
+<div class="wrap">
+
+<!-- ══════════════════════════════════════════════════════
+     ① 요약
+══════════════════════════════════════════════════════ -->
+<section id="s1">
+  <div class="sec-hdr">① 요약</div>
+  <div class="sec-body">
+    <table style="margin-bottom:14px">
+      <tr><th style="width:150px">반 / 팀</th><td>LG 부트캠프 13기 C반 3팀</td></tr>
+      <tr><th>프로젝트명</th><td>요즘애드 (YozumAd) — 광고 카피 AI 리스크 진단·생성 서비스</td></tr>
+      <tr><th>프로그램 구성</th><td>program_frontend (Next.js·TypeScript) · program_backend (Go 1.26·Gin·pgvector) · program_data (Python 3.12·APScheduler)</td></tr>
+      <tr><th>요구사항 총계</th><td>기능 16개 (R-01~R-12, R-14~R-17) + 비기능 5개 (R-18~R-22) = 21개 &nbsp;<em style="color:#6b7280">(R-13 결번)</em></td></tr>
+      <tr><th>테스트 실행 방법</th>
+          <td>FE: <strong>직접 실행</strong> <code>npx vitest run</code> (2026-07-02 09:05:11) &nbsp;|&nbsp;
+              BE: <strong>직접 실행</strong> <code>go test ./...</code> (2026-07-02) &nbsp;|&nbsp;
+              DATA: <strong>직접 실행</strong> <code>pytest tests/ -v</code> (2026-07-02, 8.22s)</td></tr>
+    </table>
+    <div class="kpi-row">
+      <div class="kpi"><div class="kpi-v" style="color:var(--pass)">15/16</div><div class="kpi-l">기능 요구사항 구현됨</div></div>
+      <div class="kpi"><div class="kpi-v" style="color:var(--pass)">260</div><div class="kpi-l">전체 테스트 케이스</div></div>
+      <div class="kpi"><div class="kpi-v" style="color:var(--pass)">260</div><div class="kpi-l">PASS (실패 0)</div></div>
+      <div class="kpi"><div class="kpi-v" style="color:var(--pass)">✓</div><div class="kpi-l">FE 빌드 성공 (직접 확인)</div></div>
+      <div class="kpi"><div class="kpi-v" style="color:var(--pass)">✓</div><div class="kpi-l">BE 빌드 성공 (직접 확인)</div></div>
+      <div class="kpi"><div class="kpi-v" style="color:var(--pass)">4명</div><div class="kpi-l">협업 팀원 확인</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ② 산출물 점검
+══════════════════════════════════════════════════════ -->
+<section id="s2">
+  <div class="sec-hdr">② 산출물 점검 결과</div>
+  <div class="sec-body">
+    <div class="notice">
+      <strong>제외 항목:</strong> <code>LG_부트캠프_13기_C반_에이전트(3팀).html</code>은 Agent 생성 출력물이므로 점검 대상에서 제외합니다.
     </div>
     <table>
-      <tr><th width="150">항목</th><th>내용</th></tr>
-      <tr><td>반 / 팀</td><td>LG 부트캠프 13기 C반 3팀</td></tr>
-      <tr><td>프로젝트명</td><td><strong>요즘애드 (YozumAd)</strong> — 광고 문구·포스터 이미지의 사회적·역사적 민감 표현을 AI(RAG)로 자동 진단하는 서비스</td></tr>
-      <tr><td>기술 스택</td><td>Next.js(TypeScript) · Go 1.26(Gin) · Python 3.12 · PostgreSQL 15+pgvector · OpenAI gpt-4o-mini / text-embedding-3-small · CLOVA OCR · AWS(EC2·ECR·S3)</td></tr>
-      <tr><td>프로그램 구성</td><td><code>program_frontend</code> · <code>program_backend</code> · <code>program_data</code> (3개)</td></tr>
-      <tr><td>기능 요구사항</td><td>A(R-01~R-12) 12개 + B(R-14~R-17) 4개 = <strong>16개 전부 <span class="b ok">구현됨</span></strong></td></tr>
-      <tr><td>비기능 요구사항</td><td>C(R-18~R-22) 5개 — 강사 평가 폼(섹션 8) 참고</td></tr>
-      <tr><td>테스트</td><td>BE 159 PASS · FE 12 PASS · DATA 89 PASS = <strong>총 260개 전부 통과</strong> (첨부 결과 기준, 2026-07-01)</td></tr>
-      <tr><td>시연 타임스탬프</td><td>A절 R-01~R-12 및 R-18 모두 입력 완료</td></tr>
-    </table>
-    <div class="note w" style="margin-top:12px;">
-      ⚠️ <strong>형식 불일치 주요 항목</strong> (상세 내용 섹션 2 참고)<br>
-      · 결과파일이 <code>.zip</code> 대신 <code>.vol1~3.egg</code>(ALZip 분할 압축)으로 제출 — 내용물은 <code>결과파일/</code> 폴더에 압축 해제되어 분석 가능<br>
-      · 결과보고서(PDF·PPTX)·시연영상(MP4) 직접 경로 확인 불가 — <code>.egg</code> 아카이브 내 포함 가능성 있음<br>
-      · <code>tests/</code> 하위 3개 폴더 모두 비어 있음 — 테스트 코드는 <code>src/</code> 내부에 위치
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     2. 산출물 점검
-════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="sh"><span class="num">2</span> 산출물 점검 결과</div>
-  <div class="sb">
-    <div class="note i">※ <code>에이전트(3팀).html</code>은 Agent 출력물이므로 점검 대상 제외 (평가 규칙 7장)</div>
-    <table style="margin-top:12px;">
-      <tr><th>산출물</th><th width="80">필수</th><th width="110">판정</th><th>파일명 / 비고</th></tr>
-      <tr>
-        <td>요구사항 명세서</td><td>✅</td><td><span class="b ok">충족</span></td>
-        <td><code>LG_부트캠프_13기_C반_요구사항_명세서(3팀).md</code>
-          <ev>R-ID · 요구사항 · 검증기준 · 시연 타임스탬프 포함. A(12개)+B(4개)+C(5개) 총 21개. Confluence 2026-07-01 동기화본.</ev>
-        </td>
-      </tr>
-      <tr>
-        <td>결과보고서 PDF</td><td>✅</td><td><span class="b na">확인 불가</span></td>
-        <td>최상위 폴더 및 <code>result/</code>에서 직접 파일 미발견.
-          <ev>근거: <code>result/LG_부트캠프_13기_C반_결과파일(3팀).vol1~3.egg</code>(총 ≈219MB) 내에 포함 가능성 있음. ALZip 압축 해제 도구 미설치로 내부 확인 불가.</ev>
-        </td>
-      </tr>
-      <tr>
-        <td>결과보고서 PPTX</td><td>✅</td><td><span class="b na">확인 불가</span></td>
-        <td>동상. <code>.egg</code> 아카이브 내부 확인 불가.</td>
-      </tr>
-      <tr>
-        <td>결과파일</td><td>✅</td><td><span class="b warn">형식 불일치</span></td>
-        <td>
-          <code>result/LG_부트캠프_13기_C반_결과파일(3팀).vol1.egg</code> (100 MB)<br>
-          <code>result/LG_부트캠프_13기_C반_결과파일(3팀).vol2.egg</code> (100 MB)<br>
-          <code>result/LG_부트캠프_13기_C반_결과파일(3팀).vol3.egg</code> (9.5 MB)
-          <ev>가이드 규정 형식: <code>.zip</code>. 실제 제출: ALZip 분할 압축(<code>.egg</code>). 내용물은 <code>결과파일/</code>에 압축 해제되어 있어 분석 수행됨.</ev>
-        </td>
-      </tr>
-      <tr>
-        <td>시연 영상</td><td>✅</td><td><span class="b na">확인 불가</span></td>
-        <td>최상위 및 <code>result/</code>에서 <code>.mp4</code> 직접 파일 미발견. <code>.egg</code> 내부 포함 가능성 있음.</td>
-      </tr>
-      <tr>
-        <td>포스터 PDF</td><td>✅</td><td><span class="b ok">충족</span></td>
-        <td><code>result/LG_부트캠프_13기_C반_포스터(3팀).pdf</code>
-          <ev>파일 직접 확인. 크기 1.07 MB.</ev>
-        </td>
-      </tr>
-      <tr>
-        <td>포스터 PPTX</td><td>✅</td><td><span class="b ok">충족</span></td>
-        <td><code>result/LG_부트캠프_13기_C반_포스터(3팀).pptx</code>
-          <ev>파일 직접 확인. 크기 9.6 MB.</ev>
-        </td>
-      </tr>
+      <thead>
+        <tr><th>산출물</th><th>확인 경로</th><th>PDF</th><th>PPT/PPTx</th><th>판정</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>요구사항 명세서</td>
+          <td><code>result/LG_부트캠프_13기_C반_요구사항_명세서(3팀).md</code></td>
+          <td colspan="2" style="text-align:center;color:#6b7280">— (마크다운)</td>
+          <td><span class="b bP">충족</span>
+            <div class="ev">근거: 파일 존재 확인, 크기 6,234 bytes, LastWriteTime 2026-07-01 17:13</div>
+          </td>
+        </tr>
+        <tr>
+          <td>결과보고서</td>
+          <td><code>result/LG_부트캠프_13기_C반_결과보고서(3팀).pdf·pptx</code></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">충족</span>
+            <div class="ev">근거: result/ 폴더 확인 — .pdf 7,916,487 bytes, .pptx 28,932,173 bytes, LastWriteTime 2026-07-02 09:00</div>
+          </td>
+        </tr>
+        <tr>
+          <td>결과파일 (소스코드)</td>
+          <td><code>result/LG_..._결과파일(3팀).vol1~3.egg</code></td>
+          <td colspan="2" style="text-align:center;color:#6b7280">3볼륨 분할 압축 (egg 포맷)</td>
+          <td><span class="b bP">충족</span>
+            <div class="ev">근거: vol1=104,857,600 / vol2=104,857,600 / vol3=9,542,081 bytes 존재. 압축 해제본 결과파일/ 내 src·tests·test-results 구조 확인.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>시연 영상</td>
+          <td><code>result/LG_부트캠프_13기_C반_시연영상(3팀).MP4</code></td>
+          <td colspan="2" style="text-align:center;color:#6b7280">MP4, 65,380,622 bytes</td>
+          <td><span class="b bP">충족</span>
+            <div class="ev">근거: 파일 존재, LastWriteTime 2026-07-01 17:08</div>
+          </td>
+        </tr>
+        <tr>
+          <td>포스터</td>
+          <td><code>result/LG_..._포스터(3팀).pdf·pptx</code></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">충족</span>
+            <div class="ev">근거: .pdf 3,806,625 bytes, .pptx 9,616,113 bytes, LastWriteTime 2026-07-02 09:00</div>
+          </td>
+        </tr>
+      </tbody>
     </table>
 
-    <h3 style="font-size:13px;margin:18px 0 8px;color:var(--primary);">결과파일 내부 디렉토리 정합성</h3>
+    <h3>디렉터리 정합성 (src · tests · test-results 프로그램 구성 일치)</h3>
     <table>
-      <tr><th>디렉토리</th><th>program_frontend</th><th>program_backend</th><th>program_data</th><th>정합</th></tr>
-      <tr><td><code>src/</code></td><td><span class="b ok">있음</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">✅</span></td></tr>
-      <tr><td><code>tests/</code></td><td><span class="b warn">빈 폴더</span></td><td><span class="b warn">빈 폴더</span></td><td><span class="b warn">빈 폴더</span></td><td><span class="b warn">⚠️</span></td></tr>
-      <tr><td><code>test-results/</code></td><td><span class="b ok">result.xml</span></td><td><span class="b ok">result.json</span></td><td><span class="b ok">result.xml</span></td><td><span class="b ok">✅</span></td></tr>
+      <thead><tr><th>프로그램</th><th>src/</th><th>tests/</th><th>test-results/</th><th>정합</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>program_frontend</td>
+          <td><span class="b bP">있음</span></td><td><span class="b bP">있음</span></td><td><span class="b bP">있음</span></td>
+          <td><span class="b bP">일치</span></td>
+        </tr>
+        <tr>
+          <td>program_backend</td>
+          <td><span class="b bP">있음</span></td><td><span class="b bP">있음</span></td><td><span class="b bP">있음</span></td>
+          <td><span class="b bP">일치</span></td>
+        </tr>
+        <tr>
+          <td>program_data</td>
+          <td><span class="b bP">있음</span></td><td><span class="b bP">있음</span></td><td><span class="b bP">있음</span></td>
+          <td><span class="b bP">일치</span></td>
+        </tr>
+      </tbody>
     </table>
-    <div class="note w" style="margin-top:8px;"><code>tests/</code> 3개 하위 폴더 모두 비어 있음. 테스트 코드 실제 위치: <code>src/program_backend/internal/**/*_test.go</code> · <code>src/program_frontend/src/lib/api.test.ts</code> · <code>src/program_da
-ta/tests/</code>. 코드 자체는 존재하므로 분석은 <code>src/</code> 기준으로 수행.</div>
+    <div class="ev" style="margin-top:6px">근거: PowerShell <code>Get-ChildItem 결과파일\src, tests, test-results</code> 각각 3개 하위 폴더 존재 확인.</div>
+
+    <h3>형식 불일치 안내</h3>
+    <ul style="padding-left:18px;font-size:13px;line-height:2">
+      <li>결과파일이 <code>.zip</code> 대신 <code>.egg</code>(분할 압축) 포맷으로 제출됨. 압축 해제 후 표준 구조(src/tests/test-results/)는 준수.</li>
+      <li><code>.git/</code> 폴더가 실제 Git 저장소가 아닌 git log 내보내기 텍스트 3개(<code>git_log_backend.txt</code>, <code>git_log_frontend.txt</code>, <code>git_log_data.txt</code>)만 포함.
+        <div class="ev">근거: <code>git -C 결과파일 log</code> → "fatal: not a git repository". 폴더 내 파일 3개만 존재 확인.</div>
+      </li>
+    </ul>
   </div>
-</div>
+</section>
 
-<!-- ═══════════════════════════════════════════════
-     3. 기능 구현 매트릭스
-════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="sh"><span class="num">3</span> 기능 구현 매트릭스 — 요구사항 × 검증기준 × 구현 × 테스트 × 통과</div>
-  <div class="sb">
-    <div class="note i">요구사항 명세서(Confluence 2026-07-01) 기준. 근거: 소스코드 파일 경로(직접 확인) · test-results/ 첨부 결과.</div>
-    <table style="margin-top:12px;">
-      <tr>
-        <th width="55">R-ID</th>
-        <th width="200">요구사항</th>
-        <th width="200">검증기준</th>
-        <th width="75">구현</th>
-        <th width="65">테스트</th>
-        <th width="65">통과</th>
-        <th>구현 근거 (파일 · 함수 · 엔드포인트)</th>
-      </tr>
-
-      <tr><td colspan="7" class="grp-hd">A. 사용자 관점 기능 요구사항 (R-01 ~ R-12)</td></tr>
-
-      <tr>
-        <td><strong>R-01</strong></td>
-        <td>웹에서 광고 문구를 입력하고 '검토'를 실행한다</td>
-        <td>텍스트 입력 후 '검토' 버튼 클릭 시 결과 페이지로 이동한다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>src/program_frontend/src/app/page.tsx</code> (입력 폼)<br>
-            <code>internal/handler/review.go</code> — <code>POST /review</code>
-          <ev>handler_test.go TestReview_Validation PASS · api.test.ts postReview PASS (result.json / result.xml 2026-07-01)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-02</strong></td>
-        <td>문구 내 위험 표현 구간을 심각도별(high / needs_review / low)로 하이라이트한다</td>
-        <td>결과 화면에서 위험 표현이 심각도별 색상·밑줄로 구분 표시된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/rag/review_helpers.go</code> — <code>phraseOffsets()</code><br>
-            <code>internal/rag/service.go</code> — <code>Highlight{Level, Start, End}</code>
-          <ev>review_helpers_test.go TestPhraseOffsets PASS (result.json)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-03</strong></td>
-        <td>각 위험 판정의 근거(사유·근거 출처)를 제시한다</td>
-        <td>하이라이트 항목 선택 시 판정 사유와 근거 출처가 화면에 표시된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b na">LLM의존</span></td><td><span class="b na">N/A</span></td>
-        <td><code>internal/rag/service.go</code> — <code>Highlight.Reason</code>, <code>Highlight.Basis</code>, <code>Verdict.Reasons</code>
-          <ev>구조체 구현 확인. LLM 응답 내용에 의존하므로 결정적 단위 테스트 불가. 시연 영상 01:50으로 확인 위임.</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-04</strong></td>
-        <td>위험 표현에 대한 대체 문구를 1개 이상 제안한다</td>
-        <td>위험 판정 항목마다 대안 문구가 1개 이상 제시된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/rag/service.go</code> — <code>Rewrite.After</code>, <code>Highlight.Alt</code>
-          <ev>service_test.go TestRewrite_OK, TestRewrite_GracefulOnError PASS (result.json)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-05</strong></td>
-        <td>입력 문구의 위험도 점수(0~100)를 산출·표시한다</td>
-        <td>결과 화면에 0~100 범위의 위험도 점수가 수치와 게이지로 표시된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/rag/review_helpers.go</code> — <code>computeScore()</code>, <code>clampScore()</code>, <code>scoreToLevel()</code>
-          <ev>review_helpers_test.go TestComputeScore·TestClampScore·TestScoreToLevel PASS (result.json)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-06</strong></td>
-        <td>포스터 이미지를 업로드하면 OCR로 이미지 속 문구를 추출한다</td>
-        <td>이미지 업로드 후 추출된 텍스트가 화면에 표시된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/handler/image.go</code> — <code>POST /image/upload</code><br>
-            <code>internal/image/clova.go</code> — CLOVA OCR API 연동
-          <ev>image_test.go TestUploadImage_Validation · handler_test.go TestDetectImageFormat PASS · api.test.ts uploadImage 3케이스 PASS (result.json / result.xml)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-07</strong></td>
-        <td>OCR로 추출한 문구를 동일한 검토 파이프라인(R-02~R-05)에 재사용한다</td>
-        <td>포스터 업로드 단독으로 하이라이트·근거·대안 문구·위험도 점수가 출력된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>src/program_frontend/src/lib/api.ts</code> — <code>uploadImage()</code> → <code>postReview({ source:'image' })</code>
-          <ev>api.test.ts "postReview > source='image'를 전달하면 body에 text와 source를 함께 담는다" PASS (result.xml)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-08</strong></td>
-        <td>트렌드어 기반으로 광고 문구를 생성하고 자동으로 리스크를 검토한다</td>
-        <td>제품·톤·트렌드 선택 시 광고 문구 후보와 안전 라벨·위험도가 출력된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/handler/generate.go</code> — <code>POST /generate</code><br>
-            <code>internal/rag/generate.go</code> — <code>Generate()</code> (goroutine 병렬 후보 검토)<br>
-            <code>src/program_frontend/src/app/generate/page.tsx</code>
-          <ev>generate_test.go TestGenerate_ReviewsCandidates·TestGenerate_Validation PASS (result.json)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-09</strong></td>
-        <td>과거 검토 히스토리와 요약 통계를 조회한다</td>
-        <td>히스토리 목록과 총 검토 수·평균 응답시간·위험 검출율 통계 카드가 표시된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/handler/history.go</code> — <code>GET /history</code>, <code>GET /history/stats</code><br>
-            <code>internal/rag/history.go</code> — <code>SaveHistory()</code>, <code>ListHistory()</code>, <code>HistoryStats()</code>
-          <ev>handler_test.go TestHistoryHandler_Success·TestHistoryStatsHandler · history_test.go TestHistoryStats_Cards PASS (result.json)</ev>
-        </td>
-      </tr>
-      <tr style="background:#f5f3ff;">
-        <td><strong>R-10</strong> <span class="b new" style="font-size:10px;">신규</span></td>
-        <td>신조어 활성도를 대시보드에서 조회한다 — 상위 활성도 신조어의 검색 트렌드 기반 추이 그래프 표시</td>
-        <td>대시보드에서 신조어 활성도 순위 목록과 90일 트렌드 추이 그래프가 표시된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/handler/service.go</code> — <code>GET /trends</code><br>
-            <code>internal/rag/store.go</code> — <code>TrendingTerms()</code> (mim_terms 활성도 내림차순)<br>
-            <code>src/program_frontend/src/app/dashboard/page.tsx</code><br>
-            <code>src/program_data/mim/sync_search_trend.py</code> (네이버 90일 트렌드 동기화)
-          <ev>store_test.go TestTrendingTerms_AssignsRank · handler_service_test.go TestTrends_DelegatesToStore PASS (result.json)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-11</strong></td>
-        <td>민감 사건·논란 광고 사례를 대시보드에서 조회한다</td>
-        <td>대시보드에서 민감 사건 목록과 관련 광고 전례·트렌드 차트가 표시된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/handler/events.go</code> — <code>GET /events</code>, <code>GET /events/:id</code><br>
-            <code>internal/rag/events.go</code> — <code>ListEvents()</code>, <code>GetEvent()</code>
-          <ev>events_test.go TestEventsHandler·TestListEvents_MapsRowsAndCount PASS · api.test.ts getEvents 3케이스·getEventDetail 2케이스 PASS (result.json / result.xml)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-12</strong></td>
-        <td>웹 브라우저에서 별도 설치 없이 접근·사용할 수 있다</td>
-        <td>배포 URL 접속만으로 R-01~R-11 전 과정이 동작한다 (설치 불필요)</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b na">배포확인필요</span></td><td><span class="b na">N/A</span></td>
-        <td><code>src/program_frontend/Dockerfile</code><br>
-            <code>.github/workflows/deploy.yml</code> (FE·BE) — AWS EC2 컨테이너 배포
-          <ev>CI/CD 파이프라인 소스 확인. 배포 URL 미기재 → 실제 접속 확인 불가. 시연 영상 00:01으로 확인 위임.</ev>
-        </td>
-      </tr>
-
-      <tr><td colspan="7" class="grp-hd">B. 검색·지식 내부 동작 요구사항 (R-14 ~ R-17)</td></tr>
-
-      <tr>
-        <td><strong>R-14</strong></td>
-        <td>입력 문구를 임베딩해 pgvector 기반으로 의미 유사 항목을 RAG 검색한다</td>
-        <td><code>POST /review</code> 요청 시 pgvector cosine 유사도 검색이 수행되고 관련 항목이 반환된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/rag/store.go</code> — <code>searchVector()</code> (pgvector cosine)<br>
-            <code>internal/rag/openai.go</code> — <code>EmbedBatch()</code> (text-embedding-3-small)
-          <ev>store_test.go TestSearchVector_MapsRows · openai_test.go TestEmbedBatch_OK PASS (result.json)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-15</strong></td>
-        <td>벡터 + 키워드(RRF) + 날짜 부스트를 융합해 근거를 랭킹한다</td>
-        <td>검색 결과가 벡터·키워드·날짜 점수를 RRF로 융합한 순서로 상위 8개가 선정된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/rag/index.go</code> — <code>fuseRank()</code>, <code>lexScore()</code>
-          <ev>index_test.go TestFuseRank(5케이스)·TestLexScore(5케이스)·TestRanks PASS (result.json)</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-16</strong></td>
-        <td>과거 광고 논란·민감 이슈 시드 지식베이스를 구축한다</td>
-        <td>events·issues 테이블에 시드 데이터가 적재되어 의미 검색으로 조회된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b na">DB적재검증필요</span></td><td><span class="b na">N/A</span></td>
-        <td><code>migrations/0003_seed_events.sql</code> (events 96건)<br>
-            <code>migrations/0004_seed_issues.sql</code> (issues 69건)
-          <ev>SQL 파일 존재 직접 확인. DB 실제 적재는 PostgreSQL 접속 불가로 확인 불가.</ev>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>R-17</strong></td>
-        <td>정제된 지식을 임베딩해 pgvector에 저장·동기화(백필)한다</td>
-        <td><code>POST /knowledge/sync</code> 호출 시 임베딩이 없는 항목에 임베딩이 생성·저장된다</td>
-        <td><span class="b ok">구현됨</span></td><td><span class="b ok">있음</span></td><td><span class="b ok">PASS</span></td>
-        <td><code>internal/rag/knowledge.go</code> — <code>SyncKnowledge()</code><br>
-            <code>internal/handler/knowledge.go</code> — <code>POST /knowledge/sync</code>
-          <ev>knowledge_db_test.go TestSyncKnowledge_BackfillsNullAcrossTables · handler_test.go TestKnowledgeHandlers PASS (result.json)</ev>
-        </td>
-      </tr>
-    </table>
-    <div class="note o" style="margin-top:14px;"><strong>결론:</strong> 기능 요구사항 16개 전부 <span class="b ok">구현됨</span>. R-03(LLM 판정 내용)·R-12(배포 URL)·R-16(DB 적재)는 소스 구현 확인 완료, 최종 동작 입증은 시연 영상 및 평가자 확인으로 위임.<
-/div>
+<!-- ══════════════════════════════════════════════════════
+     ③ 기능 구현 매트릭스
+══════════════════════════════════════════════════════ -->
+<section id="s3">
+  <div class="sec-hdr">③ 기능 구현 매트릭스
+    <span class="sub">A. 사용자 기능 (R-01~R-12) + B. 내부 동작 (R-14~R-17)</span>
   </div>
-</div>
+  <div class="sec-body">
+    <div class="info-box">
+      다중 프로그램 구성이므로 각 요구사항은 <strong>전체 프로그램을 통틀어</strong> 구현 여부를 확인하고, 발견된 프로그램을 근거에 함께 표시합니다. (평가 규칙 6.1)
+    </div>
 
-<!-- ═══════════════════════════════════════════════
-     4. 테스트 결과
-════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="sh"><span class="num">4</span> 테스트 결과</div>
-  <div class="sb">
-    <div class="note w"><code>tests/</code> 하위 3개 폴더 모두 비어 있어 직접 실행 불가. <code>test-results/</code> 첨부 결과로 판정 (평가 규칙 5.2).</div>
-    <table style="margin-top:14px;">
-      <tr><th>프로그램</th><th>프레임워크</th><th>결과 파일</th><th>실행 일시</th><th>총</th><th>PASS</th><th>FAIL</th><th>판정</th></tr>
-      <tr>
-        <td><strong>program_backend</strong></td><td>Go test</td>
-        <td><code>test-results/program_backend/result.json</code></td>
-        <td>2026-07-01 13:33</td><td>159</td><td>159</td><td>0</td>
-        <td><span class="b ok">첨부결과 확인</span></td>
-      </tr>
-      <tr>
-        <td><strong>program_frontend</strong></td><td>Vitest (JUnit XML)</td>
-        <td><code>test-results/program_frontend/result.xml</code></td>
-        <td>2026-07-01T04:31:23Z</td><td>12</td><td>12</td><td>0</td>
-        <td><span class="b ok">첨부결과 확인</span></td>
-      </tr>
-      <tr>
-        <td><strong>program_data</strong></td><td>pytest (JUnit XML)</td>
-        <td><code>test-results/program_data/result.xml</code></td>
-        <td>2026-07-01T13:30:22+09:00</td><td>89</td><td>89</td><td>0</td>
-        <td><span class="b ok">첨부결과 확인</span></td>
-      </tr>
-      <tr style="font-weight:700;background:#f0fdf4;">
-        <td colspan="4"><strong>합계</strong></td><td><strong>260</strong></td><td><strong>260</strong></td><td><strong>0</strong></td>
-        <td><span class="b ok">전체 PASS</span></td>
-      </tr>
-    </table>
-
-    <details style="margin-top:16px;">
-      <summary>program_backend — 패키지별 테스트 구성 (159개)</summary>
-      <table style="margin-top:8px;">
-        <tr><th>패키지</th><th>주요 테스트</th><th>판정</th></tr>
-        <tr><td><code>internal/handler</code></td><td>TestReview_Validation · TestHistoryHandler_Success · TestHistoryStatsHandler · TestEventsHandler · TestGenerate_Validation · TestKnowledgeHandlers · TestUnknownRoute_404 · TestCORS_Preflight · TestUpl
-oadImage_Validation · TestDetectImageFormat 외 다수</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td><code>internal/rag</code></td><td>TestComputeScore · TestClampScore · TestScoreToLevel · TestPhraseOffsets · TestFuseRank · TestLexScore · TestRanks · TestSearchVector_MapsRows · TestEmbedBatch_OK · TestGenerate_ReviewsCandidates · TestGe
-nerate_AIError · TestHistoryStats_Cards · TestTrendingTerms_AssignsRank · TestSyncKnowledge_BackfillsNullAcrossTables · TestListEvents_MapsRowsAndCount · TestRewrite_GracefulOnError 외 다수</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td><code>internal/image</code></td><td>CLOVA OCR HTTP 스텁 테스트 (실행 5.1s)</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td><code>internal/router</code></td><td>라우터 등록·미들웨어 설정 검증</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td><code>cmd/server</code></td><td>테스트 없음</td><td><span class="b na">SKIP</span></td></tr>
-      </table>
-    </details>
-    <details style="margin-top:10px;">
-      <summary>program_frontend — api.test.ts (12개)</summary>
-      <table style="margin-top:8px;">
-        <tr><th>그룹</th><th>테스트</th><th>판정</th></tr>
-        <tr><td>getEvents (3)</td><td>기본 limit/offset 조회 · 쿼리스트링 반영 · 비정상 응답 throw</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td>getEventDetail (2)</td><td>encodeURIComponent 인코딩 조회 · 비정상 응답 throw</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td>uploadImage (3)</td><td>multipart POST OCR 반환 · 실패 응답 error 추출 · JSON 아닐 때 statusText fallback</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td>postReview (4)</td><td>source 없이 text만 전송 · source='image' 포함 · 실패 응답 error 추출 · JSON 아닐 때 statusText fallback</td><td><span class="b ok">PASS</span></td></tr>
-      </table>
-    </details>
-    <details style="margin-top:10px;">
-      <summary>program_data — pytest (89개)</summary>
-      <table style="margin-top:8px;">
-        <tr><th>테스트 모듈</th><th>케이스 수</th><th>검증 대상</th><th>판정</th></tr>
-        <tr><td>test_crawl_urls</td><td>7</td><td>뉴스 URL fetch·파싱</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td>test_get_mim_data</td><td>10</td><td>밈 크롤러 환경변수·DB연결·upsert</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td>test_scheduler</td><td>8</td><td>스케줄러 기동 조건·파이프라인 실행 순서</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td>test_summarize_descriptions</td><td>4</td><td>OpenAI 요약 프롬프트 빌드·호출</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td>test_sync_search_trend</td><td>7</td><td>네이버 트렌드 동기화 환경변수·DB연결</td><td><span class="b ok">PASS</span></td></tr>
-        <tr><td>test_trending_word_crawler</td><td>53</td><td>나무위키 크롤러 유틸 (텍스트 처리·감성 정규화·JSON 파싱·청킹 등)</td><td><span class="b ok">PASS</span></td></tr>
-      </table>
-    </details>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     5. DevOps
-════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="sh"><span class="num">5</span> DevOps · 실행 가능성 (8개 기준)</div>
-  <div class="sb">
-    <div class="note">판정 근거: <code>결과파일/RUN.md</code> · 각 프로그램 <code>.env.example</code> · 의존성 파일(직접 확인). 실제 빌드·기동은 개발 도구·API 키 미설치로 불가.</div>
-    <table style="margin-top:12px;">
-      <tr><th width="30">#</th><th>기준</th><th width="80">FE</th><th width="80">BE</th><th width="80">DATA</th><th>근거</th></tr>
-      <tr>
-        <td>1</td><td>라이브러리(패키지) 목록 명시</td>
-        <td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td>
-        <td><code>package.json</code>(FE) · <code>go.mod</code>(BE) · <code>requirements.txt</code>(DATA) — 파일 존재 직접 확인</td>
-      </tr>
-      <tr>
-        <td>2</td><td>라이브러리 버전 고정</td>
-        <td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td>
-        <td><code>package-lock.json</code>(FE) · <code>go.sum</code>(BE) · requirements.txt 버전 고정 — 파일 존재 직접 확인</td>
-      </tr>
-      <tr>
-        <td>3</td><td>빌드·설치 방법 문서화</td>
-        <td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td>
-        <td><code>RUN.md §3</code> — npm install/build · go build/Docker · pip install + playwright install 명시</td>
-      </tr>
-      <tr>
-        <td>4</td><td>실행·기동 방법 문서화</td>
-        <td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td>
-        <td><code>RUN.md §4</code> — npm run dev · go run ./cmd/server · python 스크립트별 명령 명시</td>
-      </tr>
-      <tr>
-        <td>5</td><td>환경 변수·설정 파일 문서화</td>
-        <td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td>
-        <td><code>RUN.md §5</code> + 각 프로그램 <code>.env.example</code> 3개 모두 존재 직접 확인</td>
-      </tr>
-      <tr>
-        <td>6</td><td>외부 서비스·자원 안내</td>
-        <td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td><td><span class="b ok">충족</span></td>
-        <td><code>RUN.md §6</code> — PostgreSQL+pgvector · OpenAI API · CLOVA OCR · 네이버 데이터랩 API · AWS S3/ECR/EC2 모두 명시</td>
-      </tr>
-      <tr>
-        <td>7</td><td>빌드·설치가 문서대로 성공하는가</td>
-        <td><span class="b na">확인 불가</span></td><td><span class="b na">확인 불가</span></td><td><span class="b na">확인 불가</span></td>
-        <td>Node.js / Go / Python 미설치 환경. <code>RUN.md §7</code> 자체 기재 "정상 완료" — 직접 검증 불가.</td>
-      </tr>
-      <tr>
-        <td>8</td><td>애플리케이션이 실행·기동되는가</td>
-        <td><span class="b na">확인 불가</span></td><td><span class="b na">확인 불가</span></td><td><span class="b na">확인 불가</span></td>
-        <td>OPENAI_API_KEY 등 미설정. <code>RUN.md</code> 명시: "BE는 OPENAI_API_KEY 미설정 시 기동 불가." 직접 검증 불가.</td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     6. 시연 확인표
-════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="sh"><span class="num">6</span> 시연 확인표 — 평가자 기입용</div>
-  <div class="sb">
-    <div class="note i">타임스탬프 출처: LG_부트캠프_13기_C반_요구사항_명세서(3팀).md. 평가자는 <code>LG_부트캠프_13기_C반_시연영상(3팀).mp4</code>의 해당 위치로 이동 후 "동작 확인" 열을 기입해 주세요.</div>
-    <table style="margin-top:14px;">
-      <tr>
-        <th width="55">R-ID</th>
-        <th width="220">검증기준</th>
-        <th width="115">타임스탬프</th>
-        <th>동작 확인 <small>(평가자 기입)</small></th>
-      </tr>
-      <tr><td><strong>R-01</strong></td><td>텍스트 입력 후 '검토' 버튼 클릭 시 결과 페이지로 이동한다</td><td><span class="ts">01:38</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-02</strong></td><td>결과 화면에서 위험 표현이 심각도별 색상·밑줄로 구분 표시된다</td><td><span class="ts">01:45</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-03</strong></td><td>하이라이트 항목 선택 시 판정 사유와 근거 출처가 화면에 표시된다</td><td><span class="ts">01:50</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-04</strong></td><td>위험 판정 항목마다 대안 문구가 1개 이상 제시된다</td><td><span class="ts">02:22</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-05</strong></td><td>결과 화면에 0~100 범위의 위험도 점수가 수치와 게이지로 표시된다</td><td><span class="ts">02:30</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-06</strong></td><td>이미지 업로드 후 추출된 텍스트가 화면에 표시된다</td><td><span class="ts">02:49</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-07</strong></td><td>포스터 업로드 단독으로 하이라이트·근거·대안 문구·위험도 점수가 출력된다</td><td><span class="ts">02:52</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-08</strong></td><td>제품·톤·트렌드 선택 시 광고 문구 후보와 안전 라벨·위험도가 출력된다</td><td><span class="ts">03:53</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-09</strong></td><td>히스토리 목록과 총 검토 수·평균 응답시간·위험 검출율 통계 카드가 표시된다</td><td><span class="ts">04:14</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr style="background:#f5f3ff;"><td><strong>R-10</strong></td><td>대시보드에서 신조어 활성도 순위 목록과 90일 트렌드 추이 그래프가 표시된다</td><td><span class="ts">04:30</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-11</strong></td><td>대시보드에서 민감 사건 목록과 관련 광고 전례·트렌드 차트가 표시된다</td><td><span class="ts">04:45</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-12</strong></td><td>배포 URL 접속만으로 R-01~R-11 전 과정이 동작한다 (설치 불필요)</td><td><span class="ts">00:01</span></td><td>☐ 동작 &nbsp; ☐ 미동작 &nbsp; ☐ N/A</td></tr>
-      <tr><td><strong>R-14</strong></td><td><code>POST /review</code> 시 pgvector cosine 유사도 검색 수행</td><td><span style="font-size:12px;color:var(--na);">N/A (내부 동작)</span></td><td>—</td></tr>
-      <tr><td><strong>R-15</strong></td><td>RRF 융합 랭킹 상위 8개가 판정 근거로 사용</td><td><span style="font-size:12px;color:var(--na);">N/A (내부 동작)</span></td><td>—</td></tr>
-      <tr><td><strong>R-16</strong></td><td>events·issues 테이블 시드 데이터 적재 후 의미 검색 조회</td><td><span style="font-size:12px;color:var(--na);">N/A (DB 적재)</span></td><td>—</td></tr>
-      <tr><td><strong>R-17</strong></td><td><code>POST /knowledge/sync</code> 호출 시 미적재 항목에 임베딩 생성·저장</td><td><span style="font-size:12px;color:var(--na);">N/A (배치 동작)</span></td><td>—</td></tr>
-      <tr><td><strong>R-18</strong></td><td>DB 캐시 적중 케이스 기준 평균 응답시간이 3초 이하이다</td><td><span class="ts">04:15</span></td><td>☐ 충족 &nbsp; ☐ 미충족 &nbsp; ☐ 확인불가</td></tr>
-      <tr><td><strong>R-19~R-22</strong></td><td>내부 로직·오류 처리·동시성 (소스코드·테스트로 검증)</td><td><span style="font-size:12px;color:var(--na);">N/A (내부 로직)</span></td><td>—</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     7. Git 협업 지표
-════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="sh"><span class="num">7</span> Git 협업 지표</div>
-  <div class="sb">
-    <div class="note">3개 저장소에서 <code>git log --format="%h|%an|%ae|%ad|%s" --date=short</code>로 직접 수집. 협업의 질적 평가는 평가자에게 위임.</div>
-
-    <h3 style="font-size:13px;margin:14px 0 8px;color:var(--primary);">① 기여 분산도</h3>
-    <p style="font-size:12px;color:var(--muted);margin-bottom:8px;">팀원 4명 — 임형준(limbs713) · 박주호(juho08) · 이지수(JISU1012) · 전주현(juhyun-jeon)</p>
-
-    <strong style="font-size:12px;">program_backend (limbs713/BE) — 26커밋</strong>
-    <div class="gb"><span class="gl">임형준</span><div class="gw"><div class="gf" style="width:96%;background:#3b82f6;"></div></div><span class="gc">25</span></div>
-    <div class="gb"><span class="gl">박주호</span><div class="gw"><div class="gf" style="width:4%;background:#22c55e;"></div></div><span class="gc">1</span></div>
-
-    <strong style="font-size:12px;display:block;margin-top:12px;">program_frontend (seasonal-fish/FE) — 19커밋</strong>
-    <div class="gb"><span class="gl">전주현</span><div class="gw"><div class="gf" style="width:53%;background:#8b5cf6;"></div></div><span class="gc">10</span></div>
-    <div class="gb"><span class="gl">임형준</span><div class="gw"><div class="gf" style="width:47%;background:#3b82f6;"></div></div><span class="gc">9</span></div>
-
-    <strong style="font-size:12px;display:block;margin-top:12px;">program_data (seasonal-fish/DATA) — 27커밋</strong>
-    <div class="gb"><span class="gl">이지수</span><div class="gw"><div class="gf" style="width:59%;background:#f59e0b;"></div></div><span class="gc">16</span></div>
-    <div class="gb"><span class="gl">박주호</span><div class="gw"><div class="gf" style="width:22%;background:#22c55e;"></div></div><span class="gc">6</span></div>
-    <div class="gb"><span class="gl">전주현</span><div class="gw"><div class="gf" style="width:11%;background:#8b5cf6;"></div></div><span class="gc">3</span></div>
-    <div class="gb"><span class="gl">임형준</span><div class="gw"><div class="gf" style="width:7%;background:#3b82f6;"></div></div><span class="gc">2</span></div>
-
-    <h3 style="font-size:13px;margin:18px 0 8px;color:var(--primary);">② 커밋 지속성 (일자별 분포)</h3>
+    <!-- A. 사용자 기능 -->
+    <h3>A. 사용자 기능 요구사항 (R-01 ~ R-12)</h3>
     <table>
-      <tr><th>날짜</th><th>BE</th><th>FE</th><th>DATA</th><th>주요 작업</th></tr>
-      <tr><td>2026-06-22</td><td>5</td><td>1</td><td>0</td><td>BE 초기 설정·PR 템플릿; FE 초기 커밋</td></tr>
-      <tr><td>2026-06-23</td><td>2</td><td>0</td><td>1</td><td>BE CI 워크플로; DATA 초기 크롤링 모듈</td></tr>
-      <tr><td>2026-06-24</td><td>2</td><td>0</td><td>5</td><td>BE RAG 리뷰 엔드포인트; DATA 뉴스 크롤러·OpenAI 요약</td></tr>
-      <tr><td>2026-06-25</td><td>4</td><td>0</td><td>0</td><td>BE 히스토리·생성·지식 엔드포인트 추가</td></tr>
-      <tr><td>2026-06-29</td><td>6</td><td>9</td><td>9</td><td>BE OCR 이미지 업로드; FE 전체 UI 구성·BE 연동; DATA 밈·나무위키 트렌드 크롤러</td></tr>
-      <tr><td>2026-06-30</td><td>5</td><td>8</td><td>0</td><td>BE 이벤트 엔드포인트·리스크 점수 개선; FE 대시보드·리뷰 UI 완성·리브랜딩</td></tr>
-      <tr><td>2026-07-01</td><td>2</td><td>2</td><td>12</td><td>BE·FE 배포 수정; DATA 파이프라인 재구성·스케줄러 완성</td></tr>
+      <thead>
+        <tr><th style="width:52px">R-ID</th><th>요구사항 (요약)</th><th style="width:76px">구현</th><th style="width:72px">테스트</th><th style="width:72px">통과</th><th>근거</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>R-01</strong></td>
+          <td>광고 문구 입력 후 '검토' 실행</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>handler/review.go</code> (POST /review) · FE <code>src/app/review/page.tsx</code>
+            <div class="ev">BE: TestReview_Validation (invalid_json·empty_text·blank_text·missing_field → 400) — <code>go test ./...</code> 직접 실행 PASS<br>
+            FE: postReview 4케이스 — <code>npx vitest run</code> 직접 실행 PASS (2026-07-02 09:05:11)</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-02</strong></td>
+          <td>위험 표현 심각도별 하이라이트 (high·needs_review·low)</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>rag/service.go</code> (Highlight 구조체) · <code>rag/review_helpers.go:phraseOffsets</code> · FE <code>src/app/review/[id]/page.tsx</code>
+            <div class="ev">BE: TestPhraseOffsets(4 subtests)·TestStatusLabel·TestNormalizeSeverity·TestSeverityScoreFloor — <code>go test ./...</code> PASS<br>매핑 문서: <code>src/program_backend/docs/REQUIREMENTS_TEST_MAP.md</code></div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-03</strong></td>
+          <td>판정 근거(사유·출처) 제시</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bW">LLM 의존</span></td>
+          <td><span class="b bW">시연 입증</span></td>
+          <td>
+            BE <code>rag/service.go</code> (Verdict.Reasons · Highlight.Reason · Highlight.Basis)
+            <div class="ev">REQUIREMENTS_TEST_MAP.md: "판정은 LLM 의존 — 통합/시연으로 입증". 시연 타임스탬프 01:50</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-04</strong></td>
+          <td>위험 표현 대체 문구 1개 이상 제안</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>rag/generate.go</code> (Rewrite.After) · <code>rag/service.go</code> (Highlight.Alt)
+            <div class="ev">BE: TestRewrite_OK·TestRewrite_GracefulOnError — <code>go test ./...</code> PASS. 시연 타임스탬프 02:22</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-05</strong></td>
+          <td>위험도 점수(0~100) 산출·표시</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>rag/review_helpers.go:computeScore·scoreToLevel·clampScore·clampBand</code>
+            <div class="ev">BE: TestComputeScore·TestScoreToLevel·TestClampScore·TestClampBand·TestSeverityScoreFloor — <code>go test ./...</code> PASS. 시연 타임스탬프 02:30</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-06</strong></td>
+          <td>포스터 이미지 업로드 → OCR 문구 추출</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>handler/image.go</code> · <code>image/clova.go</code> · <code>image/service.go</code>
+            <div class="ev">BE: TestUploadImage_Validation(image없음·형식오류·타입오류 → 400) · TestDetectImageFormat(12 subtests) — <code>go test ./...</code> PASS. 시연 타임스탬프 02:49</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-07</strong></td>
+          <td>OCR 문구 → 동일 검토 파이프라인(R-02~R-05) 재사용</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE POST /review source=image 경로(동일 핸들러) · FE <code>src/lib/api.ts</code> uploadImage→postReview 연동
+            <div class="ev">BE: TestReviewHandler_Success(source=image 포함) — <code>go test ./...</code> PASS<br>FE: uploadImage > 이미지를 multipart 로 POST / postReview > source=image — <code>npx vitest run</code> PASS. 시연 타임스탬프 02:52</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-08</strong></td>
+          <td>트렌드어 기반 광고 문구 생성 + 자동 리스크 검토</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>handler/generate.go</code> (POST /generate) · <code>rag/generate.go</code> · FE <code>src/app/generate/page.tsx</code>
+            <div class="ev">BE: TestGenerateHandler·TestGenerate_Validation(3 subtests)·TestGenerate_ReviewsCandidates·TestGenerate_OK·TestGenerate_EmptyCandidates·TestGenerate_AIError — <code>go test ./...</code> PASS. 시연 타임스탬프 03:53</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-09</strong></td>
+          <td>과거 검토 히스토리 + 요약 통계 조회</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>handler/history.go</code> (GET /history · GET /history/stats · GET /history/:id) · <code>rag/history.go</code> · FE <code>src/app/history/page.tsx</code>
+            <div class="ev">BE: TestHistoryHandler_Success·TestHistoryHandler_NilNormalized·TestHistoryHandler_Error·TestHistoryStatsHandler·TestHistoryDetailHandler_* · TestListHistory_CountThenList·TestHistoryStats_Cards — <code>go test ./...</code> PASS<br>FE: getEvents(3케이스) — <code>npx vitest run</code> PASS. 시연 타임스탬프 04:14</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-10</strong></td>
+          <td>신조어 활성도 대시보드 (상위 순위·90일 추이 그래프)</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>rag/events.go</code> TrendingTerms (GET /trends) · DATA <code>trending_word_crawler/</code> 6단계·<code>mim/sync_search_trend.py</code> · FE <code>src/app/dashboard/page.tsx</code>
+            <div class="ev">BE: TestTrendsHandler·TestTrendingTerms_AssignsRank·TestTrendingTerms_MapsRows — <code>go test ./...</code> PASS<br>DATA: test_sync_search_trend.*(7케이스) — <code>pytest tests/ -v</code> 직접 실행 PASS. 시연 타임스탬프 04:30</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-11</strong></td>
+          <td>민감 사건·논란 광고 사례 대시보드 조회</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>handler/events.go</code> (GET /events · GET /events/:id) · <code>rag/events.go</code>
+            <div class="ev">BE: TestEventsHandler·TestEventDetailHandler·TestListEvents_MapsRowsAndCount·TestService_GetEvent_AttachesIssues·TestService_GetEvent_NoIssuesNormalized·TestIssuesForEvent_MapsRows — <code>go test ./...</code> PASS<br>FE: getEventDetail(2케이스) — <code>npx vitest run</code> PASS. 시연 타임스탬프 04:45</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-12</strong></td>
+          <td>웹 브라우저에서 별도 설치 없이 접근·사용</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bN">해당 없음</span></td>
+          <td><span class="b bN">해당 없음</span></td>
+          <td>
+            FE Next.js 웹앱 (배포 URL 접속만으로 이용 가능한 구조) · Dockerfile 배포 기술 (BE)
+            <div class="ev">근거: <code>npx next build</code> 직접 실행 성공 — 6개 라우트 정적/동적 생성 확인 (/, /dashboard, /generate, /history, /review, /review/[id]). 실제 배포 URL 제출물에 없음 → 시연 영상 00:01 타임스탬프 평가자 확인 필요.</div>
+          </td>
+        </tr>
+      </tbody>
     </table>
 
-    <h3 style="font-size:13px;margin:18px 0 8px;color:var(--primary);">③ 협업 상호작용 — PR 병합 목록 (총 24건)</h3>
+    <!-- B. 내부 동작 -->
+    <h3 style="margin-top:18px">B. 내부 동작 요구사항 (R-14 ~ R-17)</h3>
     <table>
-      <tr><th>저장소</th><th>PR</th><th>일자</th><th>주요 내용</th><th>머지</th></tr>
-      <tr><td rowspan="8">BE</td><td>#1</td><td>2026-06-22</td><td>project init, PR 템플릿</td><td>임형준</td></tr>
-      <tr><td>#2</td><td>2026-06-24</td><td>feat(review): RAG 기반 광고 문구 위험도 검토</td><td>임형준</td></tr>
-      <tr><td>#3</td><td>2026-06-25</td><td>ci(deploy): 컨테이너 빌드·ECR 배포 파이프라인</td><td>임형준</td></tr>
-      <tr><td>#4</td><td>2026-06-25</td><td>ci(deploy): push to main 트리거</td><td>임형준</td></tr>
-      <tr><td>#5</td><td>2026-06-25</td><td>feat(api): history·generate·knowledge 엔드포인트</td><td>임형준</td></tr>
-      <tr><td>#6</td><td>2026-06-29</td><td>feat(image): CLOVA OCR 이미지 업로드 (박주호 기여)</td><td>임형준</td></tr>
-      <tr><td>#7</td><td>2026-07-01</td><td>feat(rag): 채택 근거 표시·트렌드 메트릭·점수 개선</td><td>임형준</td></tr>
-      <tr><td>#8</td><td>2026-07-01</td><td>fix(deploy): docker compose v2·CLOVA env EC2 전달</td><td>임형준</td></tr>
-      <tr><td rowspan="6">FE</td><td>#1</td><td>2026-06-29</td><td>feat/frontend-source: Next.js 소스 추가 (전주현 기여)</td><td>임형준</td></tr>
-      <tr><td>#2</td><td>2026-06-29</td><td>feat/connect-be-api: BE API 연결·Docker 배포 (전주현)</td><td>전주현</td></tr>
-      <tr><td>#3</td><td>2026-06-30</td><td>feat: 대시보드 90일 트렌드 차트</td><td>임형준</td></tr>
-      <tr><td>#4</td><td>2026-06-30</td><td>feat: 리브랜딩·review/history/dashboard UI</td><td>임형준</td></tr>
-      <tr><td>#5</td><td>2026-06-30</td><td>feat: 랜딩·대시보드·헤더 polish</td><td>임형준</td></tr>
-      <tr><td>#6</td><td>2026-07-01</td><td>fix(deploy): docker compose v2 on EC2</td><td>임형준</td></tr>
-      <tr><td rowspan="10">DATA</td><td>#1</td><td>2026-06-24</td><td>chore/init-project: 초기 구성 (전주현)</td><td>전주현</td></tr>
-      <tr><td>#2</td><td>2026-06-24</td><td>README 수정 (이지수)</td><td>임형준</td></tr>
-      <tr><td>#3</td><td>2026-06-24</td><td>feat/news-crawler: 뉴스 URL 크롤러</td><td>이지수</td></tr>
-      <tr><td>#4</td><td>2026-06-24</td><td>feat/news-crawler: OpenAI 요약</td><td>이지수</td></tr>
-      <tr><td>#5</td><td>2026-06-29</td><td>feat/slang_terms: 나무위키 유행어 크롤러 6단계 (박주호)</td><td>박주호</td></tr>
-      <tr><td>#6</td><td>2026-06-29</td><td>feat/mim_crawler: Careet 밈 크롤러·네이버 트렌드 동기화</td><td>이지수</td></tr>
-      <tr><td>#7</td><td>2026-06-29</td><td>feat/mim_crawler: CI 수정·pytest 추가</td><td>이지수</td></tr>
-      <tr><td>#8</td><td>2026-07-01</td><td>feat/mim_crawler: 90일 비율 리스트·trend_score 계산</td><td>이지수</td></tr>
-      <tr><td>#9</td><td>2026-07-01</td><td>organize_code: 파이프라인 재구성·스케줄러 자동화 (박주호)</td><td>박주호</td></tr>
-      <tr><td>#10</td><td>2026-07-01</td><td>organize_code: requirements.txt selenium 추가</td><td>박주호</td></tr>
+      <thead>
+        <tr><th style="width:52px">R-ID</th><th>요구사항 (요약)</th><th style="width:76px">구현</th><th style="width:72px">테스트</th><th style="width:72px">통과</th><th>근거</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>R-14</strong></td>
+          <td>임베딩 → pgvector cosine 유사도 RAG 검색</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>rag/store.go:searchVector</code> · <code>rag/openai.go:EmbedBatch·EmbedSingle</code>
+            <div class="ev">BE: TestSearchVector_MapsRows·TestSearchSimilar_MapsRows·TestEmbedBatch_OK·TestEmbed_Single·TestEmbedBatch_CountMismatch·TestEmbedBatch_HTTPError — <code>go test ./...</code> PASS</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-15</strong></td>
+          <td>벡터+키워드(RRF)+날짜 부스트 융합 랭킹 (상위 8개)</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>rag/index.go:fuseRank·lexScore·argsortDesc·ranks·dateSet</code>
+            <div class="ev">BE: TestFuseRank(5 subtests)·TestLexScore(5 subtests)·TestArgsortDesc(3 subtests)·TestRanks(2 subtests)·TestDateSet(5 subtests)·TestHasExactTriggerMatch(8 subtests) — <code>go test ./...</code> PASS</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-16</strong></td>
+          <td>과거 논란·민감 이슈 시드 지식베이스 구축 (DB 적재)</td>
+          <td><span class="b bM">확인 불가</span></td>
+          <td><span class="b bN">해당 없음</span></td>
+          <td><span class="b bN">해당 없음</span></td>
+          <td>
+            BE <code>migrations/0003·0004</code> (events 96개·issues 69개 시드) — REQUIREMENTS_TEST_MAP.md 명시
+            <div class="ev">확인 불가 사유: 실제 PostgreSQL DB 미연결. 마이그레이션 적재 여부 실행 환경 없이 검증 불가. 시연 타임스탬프 없음 (N/A — DB 내부 상태).</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>R-17</strong></td>
+          <td>임베딩 생성·pgvector 저장·동기화 (백필)</td>
+          <td><span class="b bP">구현됨</span></td>
+          <td><span class="b bP">있음</span></td>
+          <td><span class="b bP">PASS</span></td>
+          <td>
+            BE <code>rag/knowledge.go:SyncKnowledge</code> · <code>handler/knowledge.go</code> (POST /knowledge/sync)
+            <div class="ev">BE: TestKnowledgeHandlers·TestSyncKnowledge_BackfillsNullAcrossTables·TestKnowledgeStatus_PerTable — <code>go test ./...</code> PASS</div>
+          </td>
+        </tr>
+      </tbody>
     </table>
-
-    <div class="note" style="margin-top:12px;">
-      <strong>사실 요약</strong>: 개발 기간 2026-06-22 ~ 2026-07-01 (10일). 3저장소 총 72커밋 · PR 24건. 팀원 4명이 3개 프로그램에 역할 분담 기여(BE 임형준 주도, FE 전주현 설계 후 임형준 마무리, DATA 이지수·박주호 주도). 마감 3일(6/29~7/1)에 커밋이 집중
-됨.<br>
-      <em>분업 적절성·코드 리뷰 깊이 등 질적 판단은 평가자에게 위임.</em>
-    </div>
   </div>
-</div>
+</section>
 
-<!-- ═══════════════════════════════════════════════
-     8. 비기능 강사 평가 폼
-════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="sh"><span class="num">8</span> 비기능 요구사항 강사 평가 폼 (평가자 기입용)</div>
-  <div class="sb">
-    <div class="note">요구사항 명세서 C절(R-18~R-22)에서 추출. Agent는 검증기준과 객관적 사실만 제공하며, 충족 여부 최종 판정은 평가자가 수행합니다.</div>
-
-    <!-- R-18 -->
-    <div class="sb-box" style="background:#f0f9ff;border:1px solid #bae6fd;margin-top:16px;">
-      <h3>1. 응답 속도 (성능) — R-18</h3>
-      <blockquote>
-        <strong>검증기준:</strong> DB 캐시 적중 케이스 기준 평균 응답시간이 3초 이하이다<br>
-        <strong>출처:</strong> "검토 1건 요청에 수 초 내 응답 — DB 적중 케이스 평균 응답시간 ≤ 3초" (R-18)<br>
-        <strong>Agent 수집 사실:</strong> <code>internal/rag/history.go HistoryStats()</code>에 평균 응답시간 집계 로직 구현 확인. 히스토리 통계 카드에서 표시. 실측값은 BE 기동 불가로 확인 불가. 시연 영상 타임스탬프: <strong>04:15</strong>
-      </blockquote>
-      <table><tr><th>세부 평가 기준</th><th width="80">점수(1~5)</th><th>코멘트</th></tr>
-        <tr><td>실사용 시나리오에서 체감 응답 속도가 ≤3초 기준에 적정한가</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-        <tr><td>응답 시간이 히스토리에 기록되어 사후 분석 가능한가</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-      </table>
+<!-- ══════════════════════════════════════════════════════
+     ④ 테스트 결과
+══════════════════════════════════════════════════════ -->
+<section id="s4">
+  <div class="sec-hdr">④ 테스트 결과</div>
+  <div class="sec-body">
+    <div class="info-box">
+      <strong>실행 방법:</strong> FE·DATA는 이 평가 중 직접 실행 완료. BE는 이 평가 중 <code>go test ./...</code> 직접 실행 완료. 모두 실패 0건.
     </div>
 
-    <!-- R-19 -->
-    <div class="sb-box" style="background:#f0fdf4;border:1px solid #bbf7d0;margin-top:14px;">
-      <h3>2. 위험도 점수 결정론성 (신뢰성) — R-19</h3>
-      <blockquote>
-        <strong>검증기준:</strong> 동일 입력·근거 집합에 대해 반복 호출 시 항상 동일한 위험도 점수가 반환된다<br>
-        <strong>Agent 수집 사실:</strong> <code>internal/rag/review_helpers.go computeScore()</code> — LLM 확률 비의존 고정 수식 구현 확인. TestComputeScore(다수 케이스)·TestClampScore·TestScoreToLevel 모두 PASS (result.json)
-      </blockquote>
-      <table><tr><th>세부 평가 기준</th><th width="80">점수(1~5)</th><th>코멘트</th></tr>
-        <tr><td>동일 입력·근거 집합에서 항상 동일 점수가 산출되는가 (결정론성)</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-        <tr><td>고정 규칙이 실제로 의미 있는 위험도 점수를 산출하는가</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-      </table>
-    </div>
-
-    <!-- R-20 -->
-    <div class="sb-box" style="background:#faf5ff;border:1px solid #e9d5ff;margin-top:14px;">
-      <h3>3. 하이라이트 위치 정확성 (신뢰성) — R-20</h3>
-      <blockquote>
-        <strong>검증기준:</strong> 하이라이트 오프셋이 원문의 실제 문자(rune) 위치와 일치하며, 한글 멀티바이트 문자에서도 정확하다<br>
-        <strong>Agent 수집 사실:</strong> <code>internal/rag/review_helpers.go phraseOffsets()</code> rune 단위 오프셋 매핑 구현. TestPhraseOffsets(4케이스)·TestHasExactTriggerMatch(8케이스) PASS — 한글 포함 케이스 검증됨 (result.json)
-      </blockquote>
-      <table><tr><th>세부 평가 기준</th><th width="80">점수(1~5)</th><th>코멘트</th></tr>
-        <tr><td>하이라이트가 원문에서 정확한 위치에 표시되는가</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-        <tr><td>한글(멀티바이트) 문자에서도 위치 매핑이 올바른가</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-      </table>
-    </div>
-
-    <!-- R-21 -->
-    <div class="sb-box" style="background:#fff7ed;border:1px solid #fed7aa;margin-top:14px;">
-      <h3>4. 입력 검증 및 오류 처리 (보안·신뢰성) — R-21</h3>
-      <blockquote>
-        <strong>검증기준:</strong> 빈 body·필수 필드 누락 시 400/422, 미존재 경로 요청 시 404가 반환된다<br>
-        <strong>Agent 수집 사실:</strong> handler_test.go — TestReview_Validation(4케이스)·TestGenerate_Validation(3케이스)·TestUnknownRoute_404·TestCORS_Preflight 모두 PASS. api.test.ts 실패 응답 처리 4케이스 PASS (result.json / result.xml)
-      </blockquote>
-      <table><tr><th>세부 평가 기준</th><th width="80">점수(1~5)</th><th>코멘트</th></tr>
-        <tr><td>테스트로 검증된 오류 케이스가 실제 시나리오를 충분히 커버하는가</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-        <tr><td>오류 응답이 FE에서 사용자에게 적절히 안내되는가</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-      </table>
-    </div>
-
-    <!-- R-22 -->
-    <div class="sb-box" style="background:#fef2f2;border:1px solid #fecaca;margin-top:14px;">
-      <h3>5. 병렬 처리 부분 실패 격리 (가용성·신뢰성) — R-22</h3>
-      <blockquote>
-        <strong>검증기준:</strong> 광고 문구 생성 중 일부 후보 검토 실패 시 해당 슬롯만 실패 처리되고 나머지 후보는 정상 반환된다<br>
-        <strong>Agent 수집 사실:</strong> <code>internal/rag/generate.go</code> — goroutine 병렬 후보 처리 구현 확인. generate_test.go TestGenerate_AIError·TestRewrite_GracefulOnError PASS (result.json)
-      </blockquote>
-      <table><tr><th>세부 평가 기준</th><th width="80">점수(1~5)</th><th>코멘트</th></tr>
-        <tr><td>일부 후보 실패 시 나머지 결과가 정상 반환되는가</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-        <tr><td>실패 슬롯이 FE에서 적절히 표기되는가</td><td><input class="si" placeholder="[  ]"></td><td><textarea class="st" rows="1"></textarea></td></tr>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     9. 확인 불가 / 한계 항목
-════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="sh"><span class="num">9</span> 확인 불가 / 한계 항목</div>
-  <div class="sb">
+    <h3>프로그램별 요약</h3>
     <table>
-      <tr><th width="110">구분</th><th>항목</th><th>이유</th><th>권장 확인 방법</th></tr>
-      <tr><td><span class="b na">확인불가</span></td><td>결과보고서 PDF·PPTX</td><td><code>result/</code>에서 직접 파일 미발견. <code>.egg</code> 아카이브 내 포함 가능성 있음(총 219MB). ALZip 해제 도구 미설치.</td><td>ALZip으로 <code>결과파일(3팀).vol1.e
-gg</code> 압축 해제 후 확인.</td></tr>
-      <tr><td><span class="b na">확인불가</span></td><td>시연 영상 MP4</td><td>동상.</td><td><code>.egg</code> 압축 해제 후 MP4 확인. 섹션 6 시연 확인표 기입에 필요.</td></tr>
-      <tr><td><span class="b warn">형식불일치</span></td><td>결과파일 제출 형식</td><td>가이드 규정: <code>.zip</code>. 실제 제출: <code>.vol1~3.egg</code>(ALZip). 내용물은 <code>결과파일/</code>에 압축 해제되어 분석 수행됨.</td><td>형식 준수 여부 평가자
- 판단.</td></tr>
-      <tr><td><span class="b warn">형식불일치</span></td><td><code>tests/</code> 빈 폴더 제출</td><td><code>tests/program_*</code> 3개 폴더 모두 비어 있음. 테스트 코드는 <code>src/</code> 내부에 위치.</td><td>분석은 <code>src/</code> 기준 완료. 별도 조치
- 없음.</td></tr>
-      <tr><td><span class="b na">확인불가</span></td><td>DevOps 기준 7·8 (빌드·기동)</td><td>Node.js / Go / Python 미설치 환경. OpenAI API 키·PostgreSQL 접속 정보 없음.</td><td><code>RUN.md §3~4</code> 대로 직접 실행.</td></tr>
-      <tr><td><span class="b na">확인불가</span></td><td>R-12 — 배포 URL 실제 접속</td><td>산출물에 배포 URL 미기재. AWS EC2 외부 서비스.</td><td>팀에게 배포 URL 확인 후 브라우저 접속 테스트.</td></tr>
-      <tr><td><span class="b na">확인불가</span></td><td>R-16 — DB 시드 데이터 실제 적재</td><td>PostgreSQL 접속 불가. SQL 파일 존재만 확인.</td><td>DB 접속 후 <code>SELECT COUNT(*) FROM events;</code> 확인.</td></tr>
-      <tr><td><span class="b na">확인불가</span></td><td>R-03 — LLM 판정 내용 품질</td><td>OpenAI API 키 없이 실제 LLM 호출 불가.</td><td>시연 영상 01:50 또는 API 키 설정 후 직접 확인.</td></tr>
-      <tr><td><span class="b na">한계</span></td><td>FE UI 렌더링 검증</td><td>FE 12개 테스트가 <code>api.ts</code> HTTP 레이어만 커버. 컴포넌트 렌더링·상호작용 미검증.</td><td>시연 영상 또는 배포 URL 브라우저 확인.</td></tr>
+      <thead>
+        <tr><th>프로그램</th><th>프레임워크</th><th>실행 방법</th><th>실행 시각</th><th>전체</th><th>PASS</th><th>FAIL</th><th>판정</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>program_frontend</td>
+          <td>Vitest v4.1.9</td>
+          <td><strong>직접 실행</strong> <code>npx vitest run</code></td>
+          <td>2026-07-02 09:05:11</td>
+          <td>12</td><td>12</td><td>0</td>
+          <td><span class="b bP">전체 PASS</span></td>
+        </tr>
+        <tr>
+          <td>program_backend</td>
+          <td>Go test (go1.26.4)</td>
+          <td><strong>직접 실행</strong> <code>go test ./...</code></td>
+          <td>2026-07-02 (이 평가 중)</td>
+          <td>159 (4패키지)</td><td>159</td><td>0</td>
+          <td><span class="b bP">전체 PASS</span></td>
+        </tr>
+        <tr>
+          <td>program_data</td>
+          <td>pytest</td>
+          <td><strong>직접 실행</strong> <code>pytest tests/ -v</code></td>
+          <td>2026-07-02 (8.22s)</td>
+          <td>89</td><td>89</td><td>0</td>
+          <td><span class="b bP">전체 PASS</span></td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align:right;font-weight:700">합계</td>
+          <td><strong>260</strong></td><td><strong>260</strong></td><td><strong>0</strong></td>
+          <td><span class="b bP">전체 PASS</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>program_frontend — 테스트 케이스 전체</h3>
+    <div class="ev" style="margin-bottom:6px">실행 명령: <code>npx vitest run --reporter=verbose</code> | 테스트 파일: <code>src/lib/api.test.ts</code> | 총 소요: 1.36s</div>
+    <table>
+      <thead><tr><th>#</th><th>테스트 케이스</th><th>결과</th><th>소요(ms)</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>getEvents &gt; 기본 limit/offset(20/0)으로 /events 를 조회하고 본문을 반환한다</td><td><span class="b bP">PASS</span></td><td>3</td></tr>
+        <tr><td>2</td><td>getEvents &gt; 전달한 limit/offset 을 쿼리스트링에 반영한다</td><td><span class="b bP">PASS</span></td><td>0</td></tr>
+        <tr><td>3</td><td>getEvents &gt; 응답이 ok 가 아니면 statusText 로 throw 한다</td><td><span class="b bP">PASS</span></td><td>1</td></tr>
+        <tr><td>4</td><td>getEventDetail &gt; id 를 encodeURIComponent 로 인코딩해 상세를 조회한다</td><td><span class="b bP">PASS</span></td><td>0</td></tr>
+        <tr><td>5</td><td>getEventDetail &gt; 응답이 ok 가 아니면 statusText 로 throw 한다</td><td><span class="b bP">PASS</span></td><td>0</td></tr>
+        <tr><td>6</td><td>uploadImage &gt; 이미지를 multipart 로 POST 하고 OCR 결과를 반환한다</td><td><span class="b bP">PASS</span></td><td>13</td></tr>
+        <tr><td>7</td><td>uploadImage &gt; 실패 응답의 error 메시지를 추출해 throw 한다</td><td><span class="b bP">PASS</span></td><td>0</td></tr>
+        <tr><td>8</td><td>uploadImage &gt; 실패 응답 본문이 JSON 이 아니면 statusText 로 fallback 한다</td><td><span class="b bP">PASS</span></td><td>0</td></tr>
+        <tr><td>9</td><td>postReview &gt; source 없이 호출하면 body 에 text 만 담아 /review 로 POST 한다</td><td><span class="b bP">PASS</span></td><td>1</td></tr>
+        <tr><td>10</td><td>postReview &gt; source='image' 를 전달하면 body 에 text 와 source 를 함께 담는다</td><td><span class="b bP">PASS</span></td><td>0</td></tr>
+        <tr><td>11</td><td>postReview &gt; 실패 응답의 error 메시지를 추출해 throw 한다</td><td><span class="b bP">PASS</span></td><td>0</td></tr>
+        <tr><td>12</td><td>postReview &gt; 실패 응답 본문이 JSON 이 아니면 statusText 로 fallback 한다</td><td><span class="b bP">PASS</span></td><td>0</td></tr>
+      </tbody>
+    </table>
+
+    <h3>program_backend — 패키지별 결과</h3>
+    <div class="ev" style="margin-bottom:6px">실행 명령: <code>go test ./...</code> (go1.26.4 windows/amd64) | 모듈: <code>github.com/limbs713/BE</code></div>
+    <table>
+      <thead><tr><th>패키지</th><th>케이스</th><th>결과</th><th>소요</th><th>대표 테스트</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>internal/handler</code></td><td>28</td><td><span class="b bP">ok</span></td><td>0.040s</td>
+          <td>TestUploadImage_Validation · TestReviewHandler_* · TestHistoryHandler_* · TestGenerateHandler · TestKnowledgeHandlers · TestHealth_OK · TestReview_Validation · TestGenerate_Validation · TestCORS_Preflight · TestUnknownRoute_404</td>
+        </tr>
+        <tr>
+          <td><code>internal/image</code></td><td>14</td><td><span class="b bP">ok</span></td><td>5.111s</td>
+          <td>TestDetectImageFormat(12 subtests) · TestNullableTime(2 subtests)</td>
+        </tr>
+        <tr>
+          <td><code>internal/rag</code></td><td>113</td><td><span class="b bP">ok</span></td><td>0.031s</td>
+          <td>TestYearFromDate · TestListEvents_* · TestService_* · TestTrendingTerms_* · TestSafetyNote(5) · TestRecentDelta(6) · TestInt32sToInts · TestSaveHistory_* · TestListHistory_* · TestGetHistory_* · TestHistoryStats_Cards · TestTruncateRunes(6) · TestDateSet(5) · TestLexScore(5) · TestArgsortDesc(3) · TestRanks(2) · TestFuseRank(5) · TestHasExactTriggerMatch(8) · TestSyncKnowledge_* · TestKnowledgeStatus_* · TestTrends_* · TestEmbedBatch_*(3) · TestJudge_OK · TestGenerate_*(4) · TestRewrite_*(2) · TestClampScore · TestScoreToLevel · TestSafetyLabel · TestSelectByEvidence · TestStatusLabel · TestNormalizeSeverity · TestSeverityScoreFloor · TestClampBand · TestComputeScore · TestPhraseOffsets(4) · TestNewReviewID · TestReview_EndToEnd · TestReview_ScoreDerivedFromEvidence · TestReview_RelatedClearedWhenSafe · TestReview_EmbedError · TestSearchVector_* · TestSearchSimilar_* · TestVectorLiteral(4)</td>
+        </tr>
+        <tr>
+          <td><code>internal/router</code></td><td>4</td><td><span class="b bP">ok</span></td><td>0.040s</td>
+          <td>TestNew_RegistersHealthAndCORS · TestNew_PreflightShortCircuits</td>
+        </tr>
+        <tr>
+          <td><code>cmd/server</code></td><td>0</td><td><span class="b bN">skip</span></td><td>—</td>
+          <td>[no test files]</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>program_data — 모듈별 결과</h3>
+    <div class="ev" style="margin-bottom:6px">실행 명령: <code>pytest tests/ -v</code> | 총 소요: 8.22s | 89 passed, 0 failed</div>
+    <table>
+      <thead><tr><th>모듈</th><th>케이스</th><th>결과</th><th>커버 기능</th></tr></thead>
+      <tbody>
+        <tr><td><code>tests.test_crawl_urls</code></td><td>7</td><td><span class="b bP">PASS</span></td><td>뉴스 URL 크롤링 (<code>crawl_urls.py</code>)</td></tr>
+        <tr><td><code>tests.test_get_mim_data</code></td><td>9</td><td><span class="b bP">PASS</span></td><td>밈 크롤러 환경설정·DB 연결·upsert (<code>get_mim_data.py</code>)</td></tr>
+        <tr><td><code>tests.test_scheduler</code></td><td>8</td><td><span class="b bP">PASS</span></td><td>파이프라인 스케줄러 (<code>scheduler.py</code>)</td></tr>
+        <tr><td><code>tests.test_summarize_descriptions</code></td><td>4</td><td><span class="b bP">PASS</span></td><td>OpenAI 뉴스 요약 (<code>summarize_descriptions.py</code>)</td></tr>
+        <tr><td><code>tests.test_sync_search_trend</code></td><td>7</td><td><span class="b bP">PASS</span></td><td>Naver 트렌드 동기화 (<code>sync_search_trend.py</code>)</td></tr>
+        <tr><td><code>tests.test_trending_word_crawler</code></td><td>54</td><td><span class="b bP">PASS</span></td><td>나무위키 유행어 파이프라인 유틸리티 전반 (applyWordLimit·extractBodyText·cleanText·normalizeSentiment·parseJsonFromText·guessContentType·chunked 등)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>코드 커버리지 (BE 자체 문서 기준)</h3>
+    <div class="notice">팀이 제출한 수치 (<code>src/program_backend/docs/REQUIREMENTS_TEST_MAP.md</code>). Agent가 직접 측정한 값이 아닙니다.</div>
+    <table>
+      <thead><tr><th>패키지</th><th>커버리지</th><th>방식</th></tr></thead>
+      <tbody>
+        <tr><td>internal/handler</td><td>100%</td><td>gin httptest + 가짜 Service 주입</td></tr>
+        <tr><td>internal/router</td><td>100%</td><td>gin httptest</td></tr>
+        <tr><td>internal/rag</td><td>~85%</td><td>OpenAI httptest 스텁 + pgxmock(DB) + 가짜 aiClient</td></tr>
+        <tr><td><strong>전체</strong></td><td><strong>86.4%</strong></td><td>cmd/server main.go 제외 기준</td></tr>
+      </tbody>
     </table>
   </div>
-</div>
+</section>
 
-</div><!-- /container -->
+<!-- ══════════════════════════════════════════════════════
+     ⑤ DevOps·실행 가능성
+══════════════════════════════════════════════════════ -->
+<section id="s5">
+  <div class="sec-hdr">⑤ DevOps · 실행 가능성 (8개 기준)</div>
+  <div class="sec-body">
+    <table>
+      <thead>
+        <tr><th style="width:30px">#</th><th>기준</th><th style="width:72px">FE</th><th style="width:72px">BE</th><th style="width:72px">DATA</th><th>근거</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>라이브러리(패키지) 목록 명시</td>
+          <td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td>
+          <td>FE: <code>src/program_frontend/package.json</code> · BE: <code>src/program_backend/go.mod</code> · DATA: <code>src/program_data/requirements.txt</code> — 3개 모두 파일 존재 확인 (PowerShell Get-ChildItem)</td>
+        </tr>
+        <tr>
+          <td>2</td><td>라이브러리 버전 고정</td>
+          <td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td>
+          <td>FE: <code>package-lock.json</code> 존재 · BE: <code>go.sum</code> 존재 · DATA: requirements.txt 핀 버전 기술 — RUN.md 1~2절 명시</td>
+        </tr>
+        <tr>
+          <td>3</td><td>빌드·설치 방법 문서화</td>
+          <td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td>
+          <td>RUN.md 3절: FE=npm install·build, BE=go mod download·go build+Dockerfile, DATA=pip install·playwright install chromium</td>
+        </tr>
+        <tr>
+          <td>4</td><td>실행·기동 방법 문서화</td>
+          <td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td>
+          <td>RUN.md 4절: FE=npm dev/start, BE=go run./docker run+DB마이그레이션, DATA=각 파이프라인 스크립트·scheduler.py</td>
+        </tr>
+        <tr>
+          <td>5</td><td>환경 변수·설정 파일 문서화</td>
+          <td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td>
+          <td>RUN.md 5절 변수 표 기술 · <code>.env.example</code> 파일 FE·BE·DATA 각각 존재 확인 (PowerShell Test-Path)</td>
+        </tr>
+        <tr>
+          <td>6</td><td>외부 서비스·자원 안내</td>
+          <td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td>
+          <td>RUN.md 6절: PostgreSQL 15+pgvector·OpenAI API·Naver 데이터랩·careet.net·AWS S3·AWS ECR/EC2 열거 및 역할 기술</td>
+        </tr>
+        <tr>
+          <td>7</td><td>빌드·설치가 문서대로 성공하는가</td>
+          <td><span class="b bP">충족</span></td><td><span class="b bP">충족</span></td>
+          <td><span class="b bW">부분 충족</span></td>
+          <td>
+            FE: <code>npx next build</code> <strong>직접 실행 성공</strong> — 6개 라우트 생성 확인 (/, /dashboard, /generate, /history, /review, /review/[id])<br>
+            BE: <code>go build -o bin/server_check ./cmd/server</code> <strong>직접 실행 성공</strong> (go1.26.4 windows/amd64)<br>
+            DATA: <code>pip install</code> 직접 실행 불가 (이미 환경에 설치된 상태로 pytest는 통과하나, 순수 신규 환경 pip install 성공 여부 미확인)
+            <div class="ev">DATA 판단 근거: pytest 89개 모두 PASS → 의존성 설치는 사실상 완료된 상태. playwright install chromium 설치 여부는 확인 불가.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>8</td><td>애플리케이션이 실행·기동되는가</td>
+          <td><span class="b bP">충족</span></td>
+          <td><span class="b bW">확인 불가</span></td>
+          <td><span class="b bW">확인 불가</span></td>
+          <td>
+            FE: <code>npx next build</code> 성공 + dev 서버 기동 구조 확인됨. API 연동 없이 UI 렌더링 가능 (NEXT_PUBLIC_API_URL 기본값: localhost:8080)<br>
+            BE: <strong>확인 불가</strong> — <code>OPENAI_API_KEY</code> 미설정 시 서버 기동 자체 불가 (RUN.md 명시). 빌드 성공과 기동 성공은 다름.<br>
+            DATA: <strong>확인 불가</strong> — 외부 키 없이 각 스크립트 실행 불가 (RUN.md 명시).
+            <div class="ev">BE: <code>go build</code>는 성공했으나 <code>go run ./cmd/server</code> 실행 시 OpenAI·DB 연결 불가로 종료 예상. 시연 영상에서 기동 확인 권장.</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:10px;font-size:13px;color:#374151">
+      ※ 3개 프로그램 연동 순서: DATA(DB 적재) → BE(서버 기동) → FE(API 연결). RUN.md에 각 실행 절차가 기술되어 있으나 명시적 연동 순서 섹션은 없음.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ⑥ 시연 확인표
+══════════════════════════════════════════════════════ -->
+<section id="s6">
+  <div class="sec-hdr">⑥ 시연 확인표 <span class="sub">평가자가 시연 영상을 보며 결과 기입</span></div>
+  <div class="sec-body">
+    <div class="notice">
+      <strong>평가자 안내:</strong> 아래 "실제 동작 확인" 열은 <code>LG_부트캠프_13기_C반_시연영상(3팀).MP4</code>를 직접 시청 후 기입합니다. N/A는 "영상 시연 대상이 아님"으로 미입증 처리하지 않습니다.
+    </div>
+    <table>
+      <thead>
+        <tr><th>R-ID</th><th>확인 항목</th><th>타임스탬프</th><th style="min-width:220px">실제 동작 확인 (평가자 기입)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>R-12</td><td>배포 URL 접속만으로 서비스 이용 가능 (설치 불필요)</td><td><strong>00:01</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인 &nbsp; [ ] 해당없음</td></tr>
+        <tr><td>R-01</td><td>텍스트 입력 후 '검토' 버튼 클릭 → 결과 페이지 이동</td><td><strong>01:38</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-02</td><td>위험 표현이 심각도별(high·needs_review·low) 색상·밑줄로 구분</td><td><strong>01:45</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-03</td><td>하이라이트 항목 선택 → 판정 사유·근거 출처 표시</td><td><strong>01:50</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-04</td><td>위험 판정 항목마다 대안 문구 1개 이상 제시</td><td><strong>02:22</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-05</td><td>0~100 위험도 점수가 수치·게이지로 표시</td><td><strong>02:30</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-06</td><td>이미지 업로드 → 추출된 텍스트 화면 표시</td><td><strong>02:49</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-07</td><td>포스터 업로드 단독으로 하이라이트·근거·대안·위험도 출력</td><td><strong>02:52</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-08</td><td>제품·톤·트렌드 선택 → 광고 후보·안전 라벨·위험도 출력</td><td><strong>03:53</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-09</td><td>히스토리 목록 + 총 검토 수·평균 응답시간·위험 검출율 통계 카드</td><td><strong>04:14</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-18</td><td>히스토리 통계 화면에서 평균 응답시간 값 확인</td><td><strong>04:15</strong></td><td style="color:#6b7280">[ ] ≤3초 &nbsp; [ ] &gt;3초 &nbsp; [ ] 확인불가</td></tr>
+        <tr><td>R-10</td><td>신조어 활성도 순위 목록 + 90일 트렌드 추이 그래프</td><td><strong>04:30</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-11</td><td>민감 사건 목록 + 관련 광고 전례·트렌드 차트</td><td><strong>04:45</strong></td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-14</td><td>pgvector 유사도 검색 수행 (내부 동작)</td><td style="color:#6b7280">N/A (내부)</td><td style="color:#6b7280">코드·테스트로 확인됨</td></tr>
+        <tr><td>R-15</td><td>RRF 융합 랭킹 (내부 동작)</td><td style="color:#6b7280">N/A (내부)</td><td style="color:#6b7280">코드·테스트로 확인됨</td></tr>
+        <tr><td>R-16</td><td>events·issues 시드 DB 적재 여부</td><td style="color:#6b7280">N/A (DB 상태)</td><td style="color:#6b7280">[ ] 확인됨 &nbsp; [ ] 미확인</td></tr>
+        <tr><td>R-17</td><td>POST /knowledge/sync 임베딩 생성·저장 (배치 동작)</td><td style="color:#6b7280">N/A (배치)</td><td style="color:#6b7280">코드·테스트로 확인됨</td></tr>
+        <tr><td>R-19</td><td>동일 입력 반복 호출 시 동일 위험도 점수 (내부 로직)</td><td style="color:#6b7280">N/A (내부)</td><td style="color:#6b7280">점수 계산 순수함수 구조 확인. LLM temperature 설정은 강사 확인 권장.</td></tr>
+        <tr><td>R-20</td><td>rune 오프셋 역매핑 — 한글 위치 정확성 (내부 로직)</td><td style="color:#6b7280">N/A (내부)</td><td style="color:#6b7280">TestPhraseOffsets·TestTruncateRunes로 확인됨</td></tr>
+        <tr><td>R-21</td><td>빈 입력·잘못된 요청 400, 미존재 경로 404 반환</td><td style="color:#6b7280">N/A (오류 처리)</td><td style="color:#6b7280">TestReview_Validation·TestUnknownRoute_404·TestGenerate_Validation으로 확인됨</td></tr>
+        <tr><td>R-22</td><td>일부 후보 검토 실패 시 해당 슬롯만 실패, 나머지 정상 반환</td><td style="color:#6b7280">N/A (동시성)</td><td style="color:#6b7280">TestRewrite_GracefulOnError으로 확인됨</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ⑦ Git 협업 지표
+══════════════════════════════════════════════════════ -->
+<section id="s7">
+  <div class="sec-hdr">⑦ Git 협업 지표</div>
+  <div class="sec-body">
+    <div class="notice">
+      <strong>분석 근거:</strong> 실제 Git 저장소 clone 없음. <code>결과파일/.git/</code> 내 내보내기 로그 3개 분석 — <code>git_log_backend.txt</code>·<code>git_log_frontend.txt</code>·<code>git_log_data.txt</code>. 커밋 내용·파일 변경분·PR 리뷰 댓글은 확인 불가.
+    </div>
+
+    <h3>팀원 참여 현황</h3>
+    <table>
+      <thead><tr><th>팀원</th><th>Git 표기</th><th>참여 저장소</th><th>주요 기여 영역</th></tr></thead>
+      <tbody>
+        <tr><td>임형준</td><td>limbs713@naver.com / limbs713@gmail.com</td><td>BE · FE</td><td>BE RAG 파이프라인·핵심 로직 전반, FE UI 폴리시·대시보드 연동, CI/CD GitHub Actions</td></tr>
+        <tr><td>박주호</td><td>juho08.park@lge.com (seasonal-fish/busung)</td><td>BE · DATA</td><td>BE CLOVA OCR 엔드포인트, DATA 나무위키 유행어 크롤러 6단계·스케줄러</td></tr>
+        <tr><td>전주현</td><td>juhyun_jeon@... (juhyun-jeon)</td><td>FE · DATA</td><td>FE 전체 UI 초기 구현·BE API 연결, DATA 프로젝트 초기 설정</td></tr>
+        <tr><td>이지수</td><td>jisu@... (JISU1012)</td><td>DATA</td><td>DATA 밈 크롤러·뉴스 크롤러·Naver 트렌드 동기화, CI Docker/GitHub Actions</td></tr>
+      </tbody>
+    </table>
+
+    <h3>저장소별 협업 지표</h3>
+    <div class="collab-grid">
+      <div class="collab-card">
+        <h4>program_backend (git_log_backend.txt)</h4>
+        <table>
+          <tr><th>분석 기간</th><td>2026-06-22 ~ 2026-07-01 (10일)</td></tr>
+          <tr><th>참여자</th><td>임형준, 박주호 (2명)</td></tr>
+          <tr><th>PR 수</th><td>8개 (PR #1~#8, Merge commit 확인)</td></tr>
+          <tr><th>기여 분산</th><td>임형준 — RAG 전체·API 확장 다수, 박주호 — OCR 기능 (PR #5·#6)</td></tr>
+          <tr><th>커밋 지속성</th><td>6/22 초기 → 6/24~25 API 확장 → 6/29 OCR 머지 → 6/30 RAG 개선 → 7/1 배포 수정</td></tr>
+          <tr><th>협업 상호작용</th><td>seasonal-fish 포크 → PR → 머지 구조 확인 (PR #5, PR #6)</td></tr>
+        </table>
+      </div>
+      <div class="collab-card">
+        <h4>program_frontend (git_log_frontend.txt)</h4>
+        <table>
+          <tr><th>분석 기간</th><td>2026-06-22 ~ 2026-07-01 (10일)</td></tr>
+          <tr><th>참여자</th><td>임형준, 전주현 (2명)</td></tr>
+          <tr><th>PR 수</th><td>6개 (PR #1~#6)</td></tr>
+          <tr><th>기여 분산</th><td>전주현 — UI 전체 초기 구현·BE 연결 (PR #1~#2), 임형준 — UI 개선·대시보드 연동 (PR #3~#6)</td></tr>
+          <tr><th>커밋 지속성</th><td>6/22 초기 → 6/29 UI 전체 구현 → 6/30 대시보드·API 연동 → 7/1 배포 수정</td></tr>
+          <tr><th>협업 상호작용</th><td>seasonal-fish 포크 → PR → 머지 구조 확인 (PR #1·#2)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="collab-card" style="margin-top:12px">
+      <h4>program_data (git_log_data.txt)</h4>
+      <table>
+        <tr><th style="width:130px">분석 기간</th><td>2026-06-23 ~ 2026-07-01 (9일)</td></tr>
+        <tr><th>참여자</th><td>이지수, 박주호, 전주현 (3명)</td></tr>
+        <tr><th>PR 수</th><td>10개 (PR #1~#10)</td></tr>
+        <tr><th>기여 분산</th><td>이지수 — 밈/트렌드/뉴스 크롤러 (PR #3~#4·#6~#8), 박주호 — 나무위키 유행어 크롤러·스케줄러 (PR #5·#9~#10), 전주현 — 초기 설정 (PR #1)</td></tr>
+        <tr><th>커밋 지속성</th><td>6/23 초기 → 6/24 뉴스 크롤러 → 6/29 밈·유행어 크롤러 병렬 개발 → 7/1 스케줄러·README 정리</td></tr>
+        <tr><th>협업 상호작용</th><td>3명 병렬 feature 브랜치 → PR → 머지. PR #5·#6에서 동시 개발 브랜치 머지 확인.</td></tr>
+      </table>
+    </div>
+
+    <h3>종합 사실 요약 <span style="font-size:11.5px;font-weight:400;color:#6b7280">(최종 판단은 평가자에게 위임)</span></h3>
+    <table>
+      <thead><tr><th>측정 신호</th><th>관찰된 사실</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>기여 분산도</strong></td>
+          <td>4명 팀원 전원이 git 로그에서 확인됨. 3개 저장소 합산 PR 24개. 각자 역할(BE·FE·DATA)이 분리되어 있으나 BE↔FE(임형준), BE↔DATA(박주호), FE↔DATA(전주현) 간 교차 참여 존재.</td>
+        </tr>
+        <tr>
+          <td><strong>커밋 지속성</strong></td>
+          <td>3개 저장소 모두 6/22~6/23 착수. 마감일(7/1) 커밋 집중 패턴이 있으나 기간 전반(6/24~6/30)에 걸쳐 지속적 커밋 확인됨. 단기 집중(10일) 개발 프로젝트 특성상 전반적 분포 양호.</td>
+        </tr>
+        <tr>
+          <td><strong>협업 상호작용</strong></td>
+          <td>모든 저장소에서 feature 브랜치 → PR → 머지 구조 사용 확인. PR 내 코드 리뷰 댓글·승인 기록은 저장소 clone 없어 확인 불가.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ⑧ 비기능 강사 평가 폼
+══════════════════════════════════════════════════════ -->
+<section id="s8">
+  <div class="sec-hdr">⑧ 비기능 요구사항 강사 평가 폼 <span class="sub">평가자(강사) 기입</span></div>
+  <div class="sec-body">
+    <div class="notice">
+      이 섹션은 <strong>평가자(강사)가 직접 채점</strong>하는 항목입니다. Agent는 객관적 참고 사실만 제공하며, 점수·결론을 매기지 않습니다.
+    </div>
+
+    <!-- R-18 응답 속도 -->
+    <div class="form-block">
+      <h4>1. 응답 속도 (성능) — R-18</h4>
+      <blockquote style="border-left:3px solid #d1d5db;padding-left:10px;color:#374151;font-size:12.5px;margin:5px 0 8px">
+        출처 요구사항: "검토 1건 요청에 수 초 내 응답한다 — DB 적중 케이스 평균 응답시간 ≤ 3초" (R-18, 검증기준)
+      </blockquote>
+      <div class="fact-box">
+        Agent 수집 사실:<br>
+        • BE <code>handler/review.go</code>에 레이턴시 측정 구현 확인 · <code>rag/history.go:HistoryStats</code> 평균 응답시간 집계 함수 존재 (TestHistoryStats_Cards PASS)<br>
+        • 실제 평균 응답시간 수치: DB·OpenAI 미연결로 직접 측정 불가<br>
+        • 시연 영상 04:15에 히스토리 통계 화면 등장 예정 — 평균 응답시간 표시 수치를 평가자가 시연 영상에서 확인 바람
+      </div>
+      <table>
+        <thead><tr><th style="width:320px">세부 평가 기준</th><th style="width:70px">점수(1~5)</th><th>코멘트</th></tr></thead>
+        <tbody>
+          <tr><td>실사용 시나리오에서 체감 성능이 요구사항(≤3초) 기준에 적정한가</td><td><input type="number" min="1" max="5"></td><td><textarea></textarea></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- R-19 결정론성 -->
+    <div class="form-block">
+      <h4>2. 결정론성 (신뢰성) — R-19</h4>
+      <blockquote style="border-left:3px solid #d1d5db;padding-left:10px;color:#374151;font-size:12.5px;margin:5px 0 8px">
+        출처 요구사항: "동일한 근거 집합이 주어지면 항상 동일한 위험도 점수를 산출한다" (R-19)
+      </blockquote>
+      <div class="fact-box">
+        Agent 수집 사실:<br>
+        • 점수 산출 함수 <code>rag/review_helpers.go:computeScore</code>는 순수 함수 구현 → TestComputeScore·TestClampScore·TestClampBand 모두 PASS (<code>go test ./...</code>)<br>
+        • LLM 판정 텍스트 자체는 OpenAI temperature 파라미터에 의존 — <code>rag/openai.go</code>의 temperature 설정값 직접 확인 권장<br>
+        • 벡터 검색 결과(근거 집합)가 동일하면 점수는 결정론적으로 산출되는 구조
+      </div>
+      <table>
+        <thead><tr><th style="width:320px">세부 평가 기준</th><th style="width:70px">점수(1~5)</th><th>코멘트</th></tr></thead>
+        <tbody>
+          <tr><td>동일 입력에 대해 결과가 일관되게 산출되는가 (반복 호출 시 점수 일치)</td><td><input type="number" min="1" max="5"></td><td><textarea></textarea></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- R-20 오프셋 정확성 -->
+    <div class="form-block">
+      <h4>3. 한글 멀티바이트 오프셋 정확성 (신뢰성) — R-20</h4>
+      <blockquote style="border-left:3px solid #d1d5db;padding-left:10px;color:#374151;font-size:12.5px;margin:5px 0 8px">
+        출처 요구사항: "rune 오프셋 역매핑 결과가 원문 내 표현 위치와 일치한다 — 한글 멀티바이트 문자에서도 정확" (R-20)
+      </blockquote>
+      <div class="fact-box">
+        Agent 수집 사실:<br>
+        • BE <code>rag/review_helpers.go:phraseOffsets</code> rune 오프셋 역매핑 구현 확인<br>
+        • TestPhraseOffsets(4 subtests, 한글 rune 위치 정확성 포함)·TestTruncateRunes(6 subtests, rune 0x (byte 다름) 케이스 포함) — <code>go test ./...</code> PASS<br>
+        • 시연 영상 01:45에 하이라이트 표시 — 위치 정확성 육안 확인 가능
+      </div>
+      <table>
+        <thead><tr><th style="width:320px">세부 평가 기준</th><th style="width:70px">점수(1~5)</th><th>코멘트</th></tr></thead>
+        <tbody>
+          <tr><td>실제 화면에서 하이라이트가 원문 위치와 정확히 일치하는가 (시연 영상 01:45 확인)</td><td><input type="number" min="1" max="5"></td><td><textarea></textarea></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- R-21 오류 처리 -->
+    <div class="form-block">
+      <h4>4. 오류 처리 (신뢰성) — R-21</h4>
+      <blockquote style="border-left:3px solid #d1d5db;padding-left:10px;color:#374151;font-size:12.5px;margin:5px 0 8px">
+        출처 요구사항: "빈 입력·잘못된 요청에 4xx, 미존재 경로에 404를 반환한다" (R-21)
+      </blockquote>
+      <div class="fact-box">
+        Agent 수집 사실:<br>
+        • TestReview_Validation: invalid_json·empty_text·blank_text·missing_field → 400 — <code>go test ./...</code> PASS<br>
+        • TestGenerate_Validation: invalid_json·missing_product·blank_product → 400 — PASS<br>
+        • TestUnknownRoute_404: 미존재 경로 → 404 — PASS<br>
+        • FE <code>src/lib/api.ts</code>: 실패 응답 error 메시지 추출·statusText fallback — <code>npx vitest run</code> PASS (케이스 6개)
+      </div>
+      <table>
+        <thead><tr><th style="width:320px">세부 평가 기준</th><th style="width:70px">점수(1~5)</th><th>코멘트</th></tr></thead>
+        <tbody>
+          <tr><td>사용자에게 오류 상황이 명확히 안내되는가 (FE 화면 오류 처리 포함)</td><td><input type="number" min="1" max="5"></td><td><textarea></textarea></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- R-22 부분 실패 격리 -->
+    <div class="form-block">
+      <h4>5. 부분 실패 격리 (신뢰성·확장성) — R-22</h4>
+      <blockquote style="border-left:3px solid #d1d5db;padding-left:10px;color:#374151;font-size:12.5px;margin:5px 0 8px">
+        출처 요구사항: "후보 일부 검토 실패 시 전체를 중단하지 않고 해당 슬롯만 실패로 표기한다" (R-22)
+      </blockquote>
+      <div class="fact-box">
+        Agent 수집 사실:<br>
+        • BE <code>rag/generate.go</code> Rewrite graceful 실패 처리 구현 확인<br>
+        • TestRewrite_GracefulOnError — <code>go test ./...</code> PASS<br>
+        • TestGenerate_ReviewsCandidates (다수 후보 동시 처리 경로) — PASS<br>
+        • 실사용 시나리오(일부 후보만 API 오류)는 시연 영상 타임스탬프 없음
+      </div>
+      <table>
+        <thead><tr><th style="width:320px">세부 평가 기준</th><th style="width:70px">점수(1~5)</th><th>코멘트</th></tr></thead>
+        <tbody>
+          <tr><td>실제 사용 시나리오에서 부분 실패가 격리되어 나머지 후보가 정상 반환되는가</td><td><input type="number" min="1" max="5"></td><td><textarea></textarea></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ⑨ 확인 불가 / 한계 항목
+══════════════════════════════════════════════════════ -->
+<section id="s9">
+  <div class="sec-hdr">⑨ 확인 불가 / 한계 항목</div>
+  <div class="sec-body">
+    <div class="limit">
+      <strong>① Git 히스토리 — 실저장소 clone 없음</strong>
+      <code>.git/</code> 폴더가 실제 저장소가 아닌 git log 내보내기 텍스트 3개만 포함. 커밋 상세 내용·파일 diff·PR 리뷰 댓글·blame 분석 불가.
+      <div class="ev">근거: <code>git -C 결과파일 log</code> 실행 → "fatal: not a git repository". <code>.git/</code> 내 파일: git_log_backend.txt·git_log_frontend.txt·git_log_data.txt (3개만 존재)</div>
+    </div>
+    <div class="limit">
+      <strong>② R-16 시드 DB 적재 — 확인 불가</strong>
+      events 96개·issues 69개 시드 데이터는 마이그레이션 SQL로 적재되는 구조이나, PostgreSQL DB 미연결 상태에서 실제 적재 여부 검증 불가.
+      <div class="ev">근거: REQUIREMENTS_TEST_MAP.md "마이그레이션 적재 검증" 명시. 직접 실행 환경 없음.</div>
+    </div>
+    <div class="limit">
+      <strong>③ BE·DATA 기동(DevOps 기준 8) — 확인 불가</strong>
+      BE는 OPENAI_API_KEY 미설정 시 서버 기동 자체 불가 (RUN.md 명시). DATA는 외부 키 없이 파이프라인 실행 불가. <code>go build</code>는 성공했으나 <code>go run</code> 기동 단계 확인 불가.
+      <div class="ev">근거: RUN.md "BE는 OPENAI_API_KEY 미설정 시 서버 기동 자체 불가" 명시. API 키 미보유.</div>
+    </div>
+    <div class="limit">
+      <strong>④ R-03 판정 근거 단위 테스트 없음</strong>
+      LLM이 반환하는 Reasons·Basis 텍스트는 결정론적 단위 테스트 대상이 아님. 구현 소스는 확인됐으나 실제 출력 품질은 시연 영상(01:50)으로만 확인 가능.
+      <div class="ev">근거: REQUIREMENTS_TEST_MAP.md "R-03: 판정은 LLM 의존 — 통합/시연으로 입증" 명시.</div>
+    </div>
+    <div class="limit">
+      <strong>⑤ R-19 LLM temperature 설정 미확인</strong>
+      점수 계산 자체는 순수함수로 결정론적이나, OpenAI temperature 미설정 시 LLM 텍스트 출력이 달라질 수 있음. <code>rag/openai.go</code>의 temperature 파라미터 값 직접 확인 권장.
+    </div>
+    <div class="limit">
+      <strong>⑥ DATA pip install 신규 환경 검증 불가</strong>
+      pytest 89개는 현 환경에서 실행 성공했으나, 순수 신규 환경에서 <code>pip install -r requirements.txt</code> 및 <code>playwright install chromium</code>이 문서대로 완료되는지 별도 확인 필요.
+    </div>
+    <div class="limit">
+      <strong>⑦ 시연 영상 내용 미확인</strong>
+      시연 영상 MP4 파일이 제출되어 있으나 Agent는 영상을 재생·분석할 수 없음. 시연 확인표의 모든 "실제 동작 확인" 항목은 평가자가 직접 기입해야 함.
+      <div class="ev">근거: 평가 규칙 5.4 "Agent는 영상을 직접 판정하지 않는다."</div>
+    </div>
+    <div class="limit">
+      <strong>⑧ FE 코드 커버리지 미확인</strong>
+      Vitest 결과에서 커버리지 수치 없음. <code>--coverage</code> 옵션 없이 실행됨.
+      <div class="ev">근거: <code>npx vitest run</code> 결과 — Test Files 1 passed, Tests 12 passed. 커버리지 항목 없음.</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /wrap -->
 
 <footer>
-  LG 부트캠프 13기 C반 3팀 · 요즘애드 (YozumAd) · 자동 평가 리포트<br>
-  생성: 2026-07-01 &nbsp;|&nbsp; 평가 규칙: project_assessment_agent_v1.0.md &nbsp;|&nbsp;
-  요구사항 기준: LG_부트캠프_13기_C반_요구사항_명세서(3팀).md (Confluence 2026-07-01)<br>
-  <span style="opacity:.5;">본 리포트의 자동 판정은 검증 가능한 사실만을 근거로 하며, 주관적 판단은 포함하지 않습니다. 최종 채점은 평가자(강사)가 수행합니다.</span>
+  LG 부트캠프 13기 C반 3팀 자동 평가 리포트 &nbsp;|&nbsp;
+  평가 규칙: project_assessment_agent_v1.0.md &nbsp;|&nbsp;
+  생성 일시: 2026-07-02 &nbsp;|&nbsp;
+  모든 자동 판정에 근거(파일경로·실행 결과·커밋·타임스탬프)가 첨부되어 있습니다.
+  확인 불가 항목은 추측 없이 "확인 불가"로 명시합니다.
 </footer>
-
 </body>
 </html>
